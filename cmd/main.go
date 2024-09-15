@@ -14,7 +14,8 @@ type server struct {
 
 func (s *server) GetQuotes(ctx context.Context, TickerReq *pb.TickerRequest) (*pb.TickerResponse, error) {
 	return &pb.TickerResponse{Price: TickerReq.Price, Name: TickerReq.Name, Time: TickerReq.Time}, nil
-
+	// TODO: поймать данные и записать в БД
+	// TODO: В миграцию положить данные из https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json
 	//return nil, status.Errorf(codes.Unimplemented, "method GetQuotes has been implemented")
 }
 
@@ -32,6 +33,7 @@ func main() {
 	s := grpc.NewServer()
 	pb.RegisterDataManagementServiceServer(s, &server{})
 	log.Println("Server is running on port 50052")
+
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
