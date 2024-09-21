@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>5cdb7147-150b-4529-b484-0c33b563c2b4.SCHEMA:fin.public</OriginalElement>
+  <nodes>
+    <node x="-211.0" y="336.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user_security_fulfil</node>
+    <node x="241.0" y="137.94392523364485">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security_financial_report_msfo</node>
+    <node x="-179.0" y="-92.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security</node>
+    <node x="-196.5" y="-284.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.goose_db_version</node>
+    <node x="703.0" y="336.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.quotes</node>
+    <node x="210.5" y="-92.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user_security_fulfil" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-68.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.quotes" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-68.0" />
+      <point x="812.0" y="84.0" />
+      <point x="-8.0" y="84.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security_financial_report_msfo" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-284.0" />
+      <point x="452.0" y="84.0" />
+      <point x="-8.0" y="84.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5572916666666666" showDependencies="false" x="397.29906542056074" y="322.5046728971963" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

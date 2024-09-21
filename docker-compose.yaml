@@ -2,8 +2,9 @@
 version: '3.8'
 
 networks:
-  tender-network:
+  fin-network:
     driver: bridge
+    external: true
 
 
 services:
@@ -19,7 +20,7 @@ services:
     volumes:
       - ./backend/db/migrations:/docker-entrypoint-initdb.d
     networks:
-      - tender-network
+      - fin-network
 
   app:
     image: my-go-app
@@ -31,6 +32,7 @@ services:
     container_name: data-processing-app
     ports:
       - "8080:8080"
+      - "50052:50052"
     depends_on:
       - db
     links:
@@ -42,4 +44,4 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DATABASE}
     networks:
-      - tender-network
+      - fin-network

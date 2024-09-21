@@ -5,6 +5,7 @@ import (
 	pb "fin_data_processing/pkg/grpc"
 	"google.golang.org/grpc"
 	"log"
+	"log/slog"
 	"net"
 )
 
@@ -17,6 +18,26 @@ func (s *server) GetQuotes(ctx context.Context, TickerReq *pb.TickerRequest) (*p
 	// TODO: поймать данные и записать в БД
 	// TODO: В миграцию положить данные из https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json
 	//return nil, status.Errorf(codes.Unimplemented, "method GetQuotes has been implemented")
+}
+
+func (s *server) GetMultipleQuotes(ctx context.Context, TickerReq *pb.MultipleTickerRequest) (*pb.MultipleTickerResponse, error) {
+	// Создаем новый ответ
+	response := &pb.MultipleTickerResponse{
+		Responses: make([]*pb.TickerResponse, 0, len(TickerReq.Tickers)),
+	}
+
+	// Проходим по всем тикерам в запросе и добавляем их в ответ
+	for _, ticker := range TickerReq.Tickers {
+		// Создаем новый TickerResponse с данными из TickerRequest
+		response.Responses = append(response.Responses, &pb.TickerResponse{
+			Name:  ticker.Name,
+			Price: ticker.Price,
+			Time:  ticker.Time, // Если нужно, можно также добавить временную метку
+		})
+	}
+
+	// Возвращаем ответ
+	return response, nil
 }
 
 //func (s *server) SendMessage(ctx context.Context, msg *pb.TickerRequest) (*pb.TickerResponse, error) {
@@ -32,9 +53,9 @@ func main() {
 
 	s := grpc.NewServer()
 	pb.RegisterDataManagementServiceServer(s, &server{})
-	log.Println("Server is running on port 50052")
+	slog.Info("Server is running on port 50052")
 
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
+		slog.Error("failed to serve: ", err.Error())
 	}
 }
