@@ -21,6 +21,7 @@ FROM alpine:latest
 
 # Копируем собранное приложение из этапа сборки
 COPY --from=builder /app/myapp /usr/local/bin/data_processing
+COPY --from=builder /app/.env /usr/local/bin/.env
 COPY --from=builder /app/.env /usr/local/.env
 
 # Указываем команду для запуска приложения

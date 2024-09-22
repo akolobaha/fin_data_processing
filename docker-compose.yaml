@@ -18,7 +18,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./backend/db/migrations:/docker-entrypoint-initdb.d
+#      - ./backend/db/migrations:/docker-entrypoint-initdb.d
+      - ./docker/pgdata:/var/lib/postgresql/data
     networks:
       - fin-network
 
@@ -26,6 +27,7 @@ services:
     image: my-go-app
     volumes:
       - .:/home
+      - .env:/usr/local/.env
     build:
       context: .
       dockerfile: Dockerfile

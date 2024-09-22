@@ -1,252 +1,254 @@
-INSERT INTO security(ticker, shortname, secname) VALUES ('ABIO', 'iАРТГЕН ао', 'ПАО "Артген"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ABRD', 'АбрауДюрсо', 'Абрау-Дюрсо ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ACKO', 'АСКО ао', 'АСКО ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AFKS', 'Система ао', 'АФК "Система" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AFLT', 'Аэрофлот', 'Аэрофлот-росс.авиалин(ПАО)ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AGRO', 'AGRO-гдр', 'ГДР ROS AGRO PLC ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AKRN', 'Акрон', 'Акрон ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ALRS', 'АЛРОСА ао', 'АЛРОСА ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AMEZ', 'АшинскийМЗ', 'Ашинский метзавод ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('APRI', 'АПРИ', 'АПРИ');
-INSERT INTO security(ticker, shortname, secname) VALUES ('APTK', 'Аптеки36и6', 'ПАО "Аптечная сеть 36,6" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AQUA', 'ИНАРКТИКА', 'ПАО ИНАРКТИКА');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ARSA', 'Арсагера', 'УК Арсагера ПАО-ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ASSB', 'АстрЭнСб', '"Астраханская ЭСК" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ASTR', 'Астра ао', 'Группа Астра ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('AVAN', 'Авангрд-ао', 'АКБ "АВАНГАРД" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BANE', 'Башнефт ао', 'Башнефть АНК ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BANEP', 'Башнефт ап', 'Башнефть АНК ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BELU', 'НоваБев ао', 'НоваБев Групп ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BISVP', 'БашИнСв ап', 'Башинформсвязь(ПАО) ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BRZL', 'БурЗолото', 'Бурятзолото ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BSPB', 'БСП ао', 'ПАО "Банк "Санкт-Петербург" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('BSPBP', 'БСП ап', 'Банк Санкт-Петербург ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CARM', 'СТГ', 'СТГ ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CBOM', 'МКБ ао', '"МКБ" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CHGZ', 'РН-ЗапСиб', 'РН-Западная Сибирь ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CHKZ', 'ЧКПЗ ао', '"ЧКПЗ" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CHMF', 'СевСт-ао', 'Северсталь (ПАО)ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CHMK', 'ЧМК ао', '"ЧМК" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CIAN', 'CIAN-адр', 'АДР Cian PLC ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CNTL', 'Телеграф', '"Центральный Телеграф" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('CNTLP', 'Телеграф-п', '"Центральный Телеграф" ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DELI', 'iКаршеринг', 'Каршеринг Руссия ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DIAS', 'iДиасофт', 'Диасофт ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DIOD', 'ЗаводДИОД', 'Завод ДИОД ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DVEC', 'ДЭК ао', '"ДЭК" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DZRD', 'ДонскЗР', 'Донской завод радиодеталей ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('DZRDP', 'ДонскЗР п', 'Донской завод радиодеталей ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('EELT', 'ЕвроЭлтех', '"ЕвропЭлектротехника" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ELFV', 'ЭЛ5Энер ао', '"ЭЛ5-Энерго" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ELMT', 'Элемент', 'Элемент');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ENPG', 'ЭН+ГРУП ао', 'МКПАО ЭН+ ГРУП ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ETLN', 'ETLN-гдр', 'ГДР ETALON GROUP PLC ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('EUTR', 'ЕвроТранс', 'ЕвроТранс ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('FEES', 'Россети', '"ФСК - Россети" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('FESH', 'ДВМП ао', 'ДВ морское пароходство ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('FIVE', 'FIVE-гдр', 'ГДР X5 RetailGroup N.V.ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('FIXP', 'FIXP-гдр', 'ГДР FixPrice Group PLC ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('FLOT', 'Совкомфлот', 'Совкомфлот ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GAZC', 'ГАЗКОН-ао', 'ГАЗКОН (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GAZP', 'ГАЗПРОМ ао', '"Газпром" (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GAZS', 'ГАЗ-сервис', 'ГАЗ-сервис (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GAZT', 'ГАЗ-Тек ао', 'ГАЗ-Тек ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GCHE', 'ЧеркизГ-ао', 'Группа Черкизово ПАО-ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GECO', 'iГЕНЕТИКО', 'ЦГРМ ГЕНЕТИКО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GEMA', 'iММЦБ ао', 'ПАО ММЦБ ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GEMC', 'МКПАО ЮМГ', 'Юнайтед Медикал Груп ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GLTR', 'GLTR-гдр', 'ГДР Globaltrans Invest ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('GMKN', 'ГМКНорНик', 'ГМК "Нор.Никель" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('HEAD', 'Хэдхантер', 'МКПАО Хэдхантер');
-INSERT INTO security(ticker, shortname, secname) VALUES ('HHRU', 'HHRU-адр', 'АДР HeadHunter Group ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('HIMCP', 'Химпром ап', 'Химпром ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('HNFG', 'ХЭНДЕРСОН', 'ХЭНДЕРСОН ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('HYDR', 'РусГидро', 'ПАО "РусГидро"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('IGST', 'Ижсталь2ао', 'Ижсталь ПАО ао 2в.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('IGSTP', 'Ижсталь ап', 'Ижсталь ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('INGR', 'ИНГРАД ао', 'ИНГРАД ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('IRAO', 'ИнтерРАОао', '"Интер РАО" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('IRKT', 'Яковлев-3', '"Яковлев" ПАО ак.об.-3');
-INSERT INTO security(ticker, shortname, secname) VALUES ('IVAT', 'iИВА', 'ПАО ИВА ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('JNOS', 'Славн-ЯНОС', 'Славнефть-ЯНОС (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('JNOSP', 'Слав-ЯНОСп', 'Славнефть-ЯНОС (ПАО) ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KAZT', 'Куйбазот', 'Куйбышевазот ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KAZTP', 'Куйбазот-п', 'Куйбышевазот ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KBSB', 'ТНСэКубань', 'ТНС энерго Кубань ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KCHE', 'КамчатЭ ао', 'Камчатскэнерго ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KCHEP', 'КамчатЭ ап', 'Камчатскэнерго ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KGKC', 'КурганГКао', 'Курганская генер.комп.ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KGKCP', 'КурганГКап', 'Курганская генер. комп. ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KLSB', 'КалужскСК', 'ао"Калужская сбыт.комп."ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KLVZ', 'Кристалл', 'Алкогольная Группа Кристалл');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KMAZ', 'КАМАЗ', 'КАМАЗ ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KMEZ', 'КМЗ', 'Ковровский механический завод');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KOGK', 'КоршГОК ао', 'Коршуновский ГОК ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KRKN', 'СаратНПЗ', 'Саратовский НПЗ ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KRKNP', 'СаратНПЗ-п', 'Саратовский НПЗ ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KRKOP', 'ТКЗКК ап', 'ТКЗ Красный котельщик ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KROT', 'КрасОкт-ао', '"КрасныйОктябрь" ПАО - ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KROTP', 'КрасОкт-1п', 'КрасныйОктябрь-1п');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KRSB', 'Красэсб ао', 'Красноярскэнергосбыт ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KRSBP', 'Красэсб ап', 'Красноярскэнергосбыт ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KUBE', 'РСетКубань', '"Россети Кубань" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KUZB', 'КузнецкийБ', 'Банк "Кузнецкий" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KZOS', 'ОргСинт ао', 'ПАО "Органический синтез" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('KZOSP', 'ОргСинт ап', 'ПАО "Органический синтез" ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LEAS', 'Европлан', 'ПАО «ЛК «Европлан»');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LENT', 'Лента ао', 'Лента МКПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LKOH', 'ЛУКОЙЛ', 'НК ЛУКОЙЛ (ПАО) - ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LNZL', 'Лензолото', '"Лензолото" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LNZLP', 'Лензол. ап', '"Лензолото" ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LSNG', 'РСетиЛЭ', 'Россети Ленэнерго ПАО-ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LSNGP', 'РСетиЛЭ-п', 'Россети Ленэнерго ПАО-ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LSRG', 'ЛСР ао', 'Группа ЛСР ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('LVHK', 'Левенгук', 'Левенгук ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MAGE', 'МагадЭн ао', '"Магаданэнерго" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MAGEP', 'МагадЭн ап', '"Магаданэнерго" ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MAGN', 'ММК', '"Магнитогорск.мет.комб" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MBNK', 'МТС Банк', 'МТС-Банк ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MDMG', 'MDMG-ао', 'МКПАО «МД Медикал Груп»');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MFGS', 'Мегион-ао', 'ао "Славнефть-Мегионнефтегаз"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MFGSP', 'Мегион-ап', 'ап Мегионнефтегаз');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MGKL', 'МГКЛ', 'МГКЛ ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MGNT', 'Магнит ао', '"Магнит" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MGNZ', 'СМЗ-ао', 'Соликамский магн.завод(ОАО)ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MGTS', 'МГТС-5ао', 'ПАО "МГТС" ао (5 в)');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MGTSP', 'МГТС-4ап', 'ПАО "МГТС" ап (4 в)');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MISB', 'ТНСэнМарЭл', 'ТНС энерго Марий Эл ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MISBP', 'ТНСэМаЭл-п', 'ТНС энерго Марий Эл ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MOEX', 'МосБиржа', 'ПАО Московская Биржа');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKC', 'РоссЦентр', 'ПАО "Россети Центр" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKK', 'Россети СК', 'Россети Сев. Кавказ ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKP', 'РСетиЦП ао', 'Россети Центр и Приволжье ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKS', 'РсетСиб ао', 'Россети Сибирь ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKU', 'Россети Ур', 'Россети Урал (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKV', 'РсетВол ао', 'Россети Волга ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKY', 'РоссЮг ао', 'Россети Юг  (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRKZ', 'РСетиСЗ ао', 'ПАО Россети Северо-Запад ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MRSB', 'МордЭнСб', 'Мордовск.энергсбыт.комп.ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MSNG', '+МосЭнерго', 'МосЭнерго акции обыкн.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MSRS', 'РСетиМР ао', 'ПАО Россети Моск.рег. ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MSTT', 'Мостотрест', 'ПАО "МОСТОТРЕСТ" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MTLR', 'Мечел ао', 'Мечел ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MTLRP', 'Мечел ап', 'Мечел ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MTSS', 'МТС-ао', 'Мобильные ТелеСистемы ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('MVID', 'М.видео', '"М.видео" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NAUK', 'iНПОНаука', 'НПО Наука ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NFAZ', 'НЕФАЗ', 'НЕФАЗ ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NKHP', 'НКХП ао', 'НКХП ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NKNC', 'НКНХ ао', '"Нижнекамскнефтехим" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NKNCP', 'НКНХ ап', '"Нижнекамскнефтехим" ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NKSH', 'Нижкамшина', 'Нижнекамскшина ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NLMK', 'НЛМК ао', 'ПАО "НЛМК" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NMTP', 'НМТП ао', 'НМТП (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NNSB', 'ТНСэнНН ао', 'ТНС энерго Нижний Новг.ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NNSBP', 'ТНСэнНН ап', 'ТНС энерго Нижний Новг.ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NSVZ', 'iНаукаСвяз', 'Наука-Связь ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('NVTK', 'Новатэк ао', 'ПАО "НОВАТЭК" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('OGKB', 'ОГК-2 ао', 'ОГК-2 ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('OKEY', 'OKEY-гдр', 'ГДР OKEY Group S.A. ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('OMZZP', 'ОМЗ-ап', 'ап"Объединён.  маш. заводы"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('OZON', 'OZON-адр', 'АДР Ozon Holdings PLC ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PHOR', 'ФосАгро ао', 'ФосАгро ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PIKK', 'ПИК ао', 'ПИК СЗ (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PLZL', 'Полюс', 'Полюс ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PMSB', 'ПермьЭнСб', '"Пермэнергосбыт" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PMSBP', 'ПермьЭнС-п', '"Пермэнергосбыт" ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('POLY', 'Solidcore', 'Solidcore Resources plc');
-INSERT INTO security(ticker, shortname, secname) VALUES ('POSI', 'iПозитив', 'Группа Позитив ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PRFN', 'ЧЗПСН ао', 'ЧЗПСН-Профнастил (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PRMB', 'Приморье', 'АКБ "Приморье" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('PRMD', 'ПРОМОМЕД', 'ПРОМОМЕД');
-INSERT INTO security(ticker, shortname, secname) VALUES ('QIWI', 'iQIWI', 'QIWI PLC');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RASP', 'Распадская', 'ПАО Распадская ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RDRB', 'РДБанк ао', 'РоссийскийДорож Банк ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RENI', 'Ренессанс', 'Ренессанс Страхование ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RGSS', 'РГС СК ао', 'Росгосстрах СК ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RKKE', 'ЭнергияРКК', 'РКК Энергия им.С.П.Королева ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RNFT', 'РуссНфт ао', 'РуссНефть НК ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ROLO', 'Русолово', '"Русолово" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ROSB', 'Росбанк ао', 'РОСБАНК ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ROSN', 'Роснефть', 'ПАО НК Роснефть');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ROST', 'РОСИНТЕРао', 'РОСИНТЕР РЕСТОРАНТС (ПАО)');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RTGZ', 'ГР Ростов', 'Газпром газорасп Р-н-Д ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RTKM', 'Ростел -ао', 'Ростелеком (ПАО) ао.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RTKMP', 'Ростел -ап', 'Ростелеком (ПАО) ап.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RTSB', 'ТНСэнРст', 'ТНС энерго Ростов. ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RTSBP', 'ТНСэнРст-п', 'ТНС энерго Ростов. ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RUAL', 'РУСАЛ ао', 'РУСАЛ ОК МКПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RUSI', 'ИКРУСС-ИНВ', 'РУСС-ИНВЕСТ ИК ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('RZSB', 'РязЭнСб', '"Рязанская энергосб.комп" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SAGO', 'СамарЭн-ао', 'Самараэнерго (ПАО) - ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SAGOP', 'СамарЭн-ап', 'Самараэнерго (ПАО) - ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SARE', 'СаратЭн-ао', 'Саратовэнерго(ПАО)-ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SAREP', 'СаратЭн-ап', 'Саратовэнерго(ПАО)-ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SBER', 'Сбербанк', 'Сбербанк России ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SBERP', 'Сбербанк-п', 'Сбербанк России ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SELG', 'Селигдар', 'ПАО "Селигдар"  ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SFIN', 'ЭсЭфАй ао', 'ЭсЭфАй ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SGZH', 'Сегежа', 'Сегежа ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SIBN', 'Газпрнефть', 'Газпром нефть ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SLEN', 'Сахэнер ао', 'ПАО "Сахалинэнерго" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SMLT', 'Самолет ао', 'ГК Самолет ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SNGS', 'Сургнфгз', 'Сургутнефтегаз ПАО акции об.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SNGSP', 'Сургнфгз-п', 'Сургутнефтегаз ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SOFL', 'iСофтлайн', 'Софтлайн ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SPBE', 'СПБ Биржа', 'СПБ Биржа ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('STSB', 'СтаврЭнСб', 'Ставрополэнергосбыт ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('STSBP', 'СтаврЭнСбп', 'Ставрополэнергосбыт ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SVAV', 'СОЛЛЕРС', 'ПАО "СОЛЛЕРС"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SVCB', 'Совкомбанк', 'Совкомбанк ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SVET', 'Светофор', 'Светофор Групп ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('SVETP', 'Светофор п', 'Светофор Групп ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TASB', 'ТамбЭнСб', 'ао"Тамбов.энергсбыт.комп."ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TASBP', 'ТамбЭнСб-п', 'ап"Тамбов.энергсбыт.комп."ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TATN', 'Татнфт 3ао', 'ПАО "Татнефть" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TATNP', 'Татнфт 3ап', 'ПАО "Татнефть" ап 3 вып.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TCSG', 'ТКСХолд ао', 'ТКС Холдинг МКПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TGKA', 'ТГК-1', 'ао ПАО "ТГК-1"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TGKB', 'ТГК-2', 'ао ПАО "ТГК-2"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TGKBP', 'ТГК-2 ап', 'ап ПАО "ТГК-2"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TGKN', 'ТГК-14', 'ао ПАО "ТГК-14"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TNSE', 'ТНСэнрг ао', 'ПАО ГК "ТНС энерго" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TORS', 'РСТомск ао', 'ао ПАО "Россети Томск"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TORSP', 'РСТомск ап', 'ап ПАО "Россети Томск"');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TRMK', 'ТМК ао', 'ПАО ТМК');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TRNFP', 'Транснф ап', 'Транснефть ПАО акц.пр.');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TTLK', 'Таттел. ао', '"Таттелеком" ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('TUZA', 'ТЗА ао', 'Туймаз. завод автобетоновозов');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UGLD', 'ЮГК', 'ЮГК');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UKUZ', 'ЮжКузб. ао', 'Южный Кузбасс ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UNAC', 'iАвиастКао', 'Об.авиастр.корп. ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UNKL', 'ЮУНК ао', 'Южно-Уральский никел. комб. ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UPRO', 'Юнипро ао', 'Юнипро ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('URKZ', 'УрКузница', 'ПАО "Уральская кузница" ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('USBN', 'УралСиб ао', 'БАНК УРАЛСИБ ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('UTAR', 'ЮТэйр ао', 'Авиакомпания "ЮТэйр" (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VEON-RX', 'VEON', 'VEON Ltd. ORD SHS');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VGSB', 'ВолгЭнСб', '"Волгоград.энергосбыткомп" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VGSBP', 'ВолгЭнСб-п', '"Волгоград.энергосбыткомп" ПАО');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VJGZ', 'Варьеган', 'ННК-Варьеганнефтегаз ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VJGZP', 'Варьеган-п', 'ННК-Варьеганнефтегаз ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VKCO', 'МКПАО "ВК"', 'Международная компания ПАО ВК');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VLHZ', 'ВХЗ-ао', 'Владимирский химич.з-д(ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VRSB', 'ТНСэнВорон', 'ТНС энерго Воронеж ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VRSBP', 'ТНСэнВор-п', 'ТНС энерго Воронеж ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VSEH', 'ВИ.ру', 'ВИ.ру');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VSMO', 'ВСМПО-АВСМ', 'Корп. ВСМПО-АВИСМА (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VSYD', 'ВыбСудЗ ао', 'Выборгский Суд.Завод ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VSYDP', 'ВыбСудЗ ап', 'Выборгский Суд.Завод ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('VTBR', 'ВТБ ао', 'ао ПАО Банк ВТБ');
-INSERT INTO security(ticker, shortname, secname) VALUES ('WTCM', 'ЦМТ ао', '"Центр междун. торговли"ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('WTCMP', 'ЦМТ ап', '"Центр междун. торговли"ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('WUSH', 'iВУШХолднг', 'ВУШ Холдинг ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YAKG', 'ЯТЭК ао', 'Якутская топл.-энерг. комп. ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YDEX', 'ЯНДЕКС', 'МКПАО ЯНДЕКС');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YKEN', 'Якутскэнрг', 'АК "Якутскэнерго" (ПАО) ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YKENP', 'Якутскэн-п', 'АК "Якутскэнерго" (ПАО) ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YRSB', 'ТНСэнЯр', 'ТНС энерго Ярославль ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('YRSBP', 'ТНСэнЯр-п', 'ТНС энерго Ярославль ПАО ап');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ZAYM', 'Займер ао', 'Займер ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ZILL', 'ЗИЛ ао', 'Завод им. И.А.Лихачева ПАО ао');
-INSERT INTO security(ticker, shortname, secname) VALUES ('ZVEZ', 'ЗВЕЗДА ао', 'ЗВЕЗДА ПАО ао');
+INSERT INTO security(ticker, shortname, secname) VALUES
+('ABIO', 'iАРТГЕН ао', 'ПАО "Артген"'),
+('ABRD', 'АбрауДюрсо', 'Абрау-Дюрсо ПАО ао'),
+('ACKO', 'АСКО ао', 'АСКО ПАО ао'),
+('AFKS', 'Система ао', 'АФК "Система" ПАО ао'),
+('AFLT', 'Аэрофлот', 'Аэрофлот-росс.авиалин(ПАО)ао'),
+('AGRO', 'AGRO-гдр', 'ГДР ROS AGRO PLC ORD SHS'),
+('AKRN', 'Акрон', 'Акрон ПАО ао'),
+('ALRS', 'АЛРОСА ао', 'АЛРОСА ПАО ао'),
+('AMEZ', 'АшинскийМЗ', 'Ашинский метзавод ПАО ао'),
+('APRI', 'АПРИ', 'АПРИ'),
+('APTK', 'Аптеки36и6', 'ПАО "Аптечная сеть 36,6" ао'),
+('AQUA', 'ИНАРКТИКА', 'ПАО ИНАРКТИКА'),
+('ARSA', 'Арсагера', 'УК Арсагера ПАО-ао'),
+('ASSB', 'АстрЭнСб', '"Астраханская ЭСК" ПАО'),
+('ASTR', 'Астра ао', 'Группа Астра ао'),
+('AVAN', 'Авангрд-ао', 'АКБ "АВАНГАРД" ПАО ао'),
+('BANE', 'Башнефт ао', 'Башнефть АНК ао'),
+('BANEP', 'Башнефт ап', 'Башнефть АНК ап'),
+('BELU', 'НоваБев ао', 'НоваБев Групп ПАО ао'),
+('BISVP', 'БашИнСв ап', 'Башинформсвязь(ПАО) ап'),
+('BRZL', 'БурЗолото', 'Бурятзолото ПАО ао'),
+('BSPB', 'БСП ао', 'ПАО "Банк "Санкт-Петербург" ао'),
+('BSPBP', 'БСП ап', 'Банк Санкт-Петербург ап'),
+('CARM', 'СТГ', 'СТГ ао'),
+('CBOM', 'МКБ ао', '"МКБ" ПАО ао'),
+('CHGZ', 'РН-ЗапСиб', 'РН-Западная Сибирь ПАО ао'),
+('CHKZ', 'ЧКПЗ ао', '"ЧКПЗ" ПАО ао'),
+('CHMF', 'СевСт-ао', 'Северсталь (ПАО)ао'),
+('CHMK', 'ЧМК ао', '"ЧМК" ПАО ао'),
+('CIAN', 'CIAN-адр', 'АДР Cian PLC ORD SHS'),
+('CNTL', 'Телеграф', '"Центральный Телеграф" ПАО ао'),
+('CNTLP', 'Телеграф-п', '"Центральный Телеграф" ПАО ап'),
+('DELI', 'iКаршеринг', 'Каршеринг Руссия ао'),
+('DIAS', 'iДиасофт', 'Диасофт ао'),
+('DIOD', 'ЗаводДИОД', 'Завод ДИОД ПАО ао'),
+('DVEC', 'ДЭК ао', '"ДЭК" ПАО ао'),
+('DZRD', 'ДонскЗР', 'Донской завод радиодеталей ао'),
+('DZRDP', 'ДонскЗР п', 'Донской завод радиодеталей ап'),
+('EELT', 'ЕвроЭлтех', '"ЕвропЭлектротехника" ПАО ао'),
+('ELFV', 'ЭЛ5Энер ао', '"ЭЛ5-Энерго" ПАО'),
+('ELMT', 'Элемент', 'Элемент'),
+('ENPG', 'ЭН+ГРУП ао', 'МКПАО ЭН+ ГРУП ао'),
+('ETLN', 'ETLN-гдр', 'ГДР ETALON GROUP PLC ORD SHS'),
+('EUTR', 'ЕвроТранс', 'ЕвроТранс ао'),
+('FEES', 'Россети', '"ФСК - Россети" ПАО'),
+('FESH', 'ДВМП ао', 'ДВ морское пароходство ПАО ао'),
+('FIVE', 'FIVE-гдр', 'ГДР X5 RetailGroup N.V.ORD SHS'),
+('FIXP', 'FIXP-гдр', 'ГДР FixPrice Group PLC ORD SHS'),
+('FLOT', 'Совкомфлот', 'Совкомфлот ао'),
+('GAZC', 'ГАЗКОН-ао', 'ГАЗКОН (ПАО) ао'),
+('GAZP', 'ГАЗПРОМ ао', '"Газпром" (ПАО) ао'),
+('GAZS', 'ГАЗ-сервис', 'ГАЗ-сервис (ПАО) ао'),
+('GAZT', 'ГАЗ-Тек ао', 'ГАЗ-Тек ПАО ао'),
+('GCHE', 'ЧеркизГ-ао', 'Группа Черкизово ПАО-ао'),
+('GECO', 'iГЕНЕТИКО', 'ЦГРМ ГЕНЕТИКО ао'),
+('GEMA', 'iММЦБ ао', 'ПАО ММЦБ ао'),
+('GEMC', 'МКПАО ЮМГ', 'Юнайтед Медикал Груп ПАО'),
+('GLTR', 'GLTR-гдр', 'ГДР Globaltrans Invest ORD SHS'),
+('GMKN', 'ГМКНорНик', 'ГМК "Нор.Никель" ПАО ао'),
+('HEAD', 'Хэдхантер', 'МКПАО Хэдхантер'),
+('HHRU', 'HHRU-адр', 'АДР HeadHunter Group ORD SHS'),
+('HIMCP', 'Химпром ап', 'Химпром ПАО ап'),
+('HNFG', 'ХЭНДЕРСОН', 'ХЭНДЕРСОН ао'),
+('HYDR', 'РусГидро', 'ПАО "РусГидро"'),
+('IGST', 'Ижсталь2ао', 'Ижсталь ПАО ао 2в.'),
+('IGSTP', 'Ижсталь ап', 'Ижсталь ПАО ап'),
+('INGR', 'ИНГРАД ао', 'ИНГРАД ПАО ао'),
+('IRAO', 'ИнтерРАОао', '"Интер РАО" ПАО ао'),
+('IRKT', 'Яковлев-3', '"Яковлев" ПАО ак.об.-3'),
+('IVAT', 'iИВА', 'ПАО ИВА ао'),
+('JNOS', 'Славн-ЯНОС', 'Славнефть-ЯНОС (ПАО) ао'),
+('JNOSP', 'Слав-ЯНОСп', 'Славнефть-ЯНОС (ПАО) ап'),
+('KAZT', 'Куйбазот', 'Куйбышевазот ПАО ао'),
+('KAZTP', 'Куйбазот-п', 'Куйбышевазот ПАО ап'),
+('KBSB', 'ТНСэКубань', 'ТНС энерго Кубань ПАО ао'),
+('KCHE', 'КамчатЭ ао', 'Камчатскэнерго ПАО ао'),
+('KCHEP', 'КамчатЭ ап', 'Камчатскэнерго ПАО ап'),
+('KGKC', 'КурганГКао', 'Курганская генер.комп.ПАО ао'),
+('KGKCP', 'КурганГКап', 'Курганская генер. комп. ПАО ап'),
+('KLSB', 'КалужскСК', 'ао"Калужская сбыт.комп."ПАО'),
+('KLVZ', 'Кристалл', 'Алкогольная Группа Кристалл'),
+('KMAZ', 'КАМАЗ', 'КАМАЗ ПАО'),
+('KMEZ', 'КМЗ', 'Ковровский механический завод'),
+('KOGK', 'КоршГОК ао', 'Коршуновский ГОК ПАО ао'),
+('KRKN', 'СаратНПЗ', 'Саратовский НПЗ ПАО ао'),
+('KRKNP', 'СаратНПЗ-п', 'Саратовский НПЗ ПАО ап'),
+('KRKOP', 'ТКЗКК ап', 'ТКЗ Красный котельщик ПАО ап'),
+('KROT', 'КрасОкт-ао', '"КрасныйОктябрь" ПАО - ао'),
+('KROTP', 'КрасОкт-1п', 'КрасныйОктябрь-1п'),
+('KRSB', 'Красэсб ао', 'Красноярскэнергосбыт ао'),
+('KRSBP', 'Красэсб ап', 'Красноярскэнергосбыт ап'),
+('KUBE', 'РСетКубань', '"Россети Кубань" ПАО'),
+('KUZB', 'КузнецкийБ', 'Банк "Кузнецкий" ПАО ао'),
+('KZOS', 'ОргСинт ао', 'ПАО "Органический синтез" ао'),
+('KZOSP', 'ОргСинт ап', 'ПАО "Органический синтез" ап'),
+('LEAS', 'Европлан', 'ПАО «ЛК «Европлан»'),
+('LENT', 'Лента ао', 'Лента МКПАО ао'),
+('LKOH', 'ЛУКОЙЛ', 'НК ЛУКОЙЛ (ПАО) - ао'),
+('LNZL', 'Лензолото', '"Лензолото" ПАО ао'),
+('LNZLP', 'Лензол. ап', '"Лензолото" ПАО ап'),
+('LSNG', 'РСетиЛЭ', 'Россети Ленэнерго ПАО-ао'),
+('LSNGP', 'РСетиЛЭ-п', 'Россети Ленэнерго ПАО-ап'),
+('LSRG', 'ЛСР ао', 'Группа ЛСР ПАО ао'),
+('LVHK', 'Левенгук', 'Левенгук ПАО ао'),
+('MAGE', 'МагадЭн ао', '"Магаданэнерго" ПАО ао'),
+('MAGEP', 'МагадЭн ап', '"Магаданэнерго" ПАО ап'),
+('MAGN', 'ММК', '"Магнитогорск.мет.комб" ПАО ао'),
+('MBNK', 'МТС Банк', 'МТС-Банк ао'),
+('MDMG', 'MDMG-ао', 'МКПАО «МД Медикал Груп»'),
+('MFGS', 'Мегион-ао', 'ао "Славнефть-Мегионнефтегаз"'),
+('MFGSP', 'Мегион-ап', 'ап Мегионнефтегаз'),
+('MGKL', 'МГКЛ', 'МГКЛ ао'),
+('MGNT', 'Магнит ао', '"Магнит" ПАО ао'),
+('MGNZ', 'СМЗ-ао', 'Соликамский магн.завод(ОАО)ао'),
+('MGTS', 'МГТС-5ао', 'ПАО "МГТС" ао (5 в)'),
+('MGTSP', 'МГТС-4ап', 'ПАО "МГТС" ап (4 в)'),
+('MISB', 'ТНСэнМарЭл', 'ТНС энерго Марий Эл ПАО ао'),
+('MISBP', 'ТНСэМаЭл-п', 'ТНС энерго Марий Эл ПАО ап'),
+('MOEX', 'МосБиржа', 'ПАО Московская Биржа'),
+('MRKC', 'РоссЦентр', 'ПАО "Россети Центр" ао'),
+('MRKK', 'Россети СК', 'Россети Сев. Кавказ ао'),
+('MRKP', 'РСетиЦП ао', 'Россети Центр и Приволжье ао'),
+('MRKS', 'РсетСиб ао', 'Россети Сибирь ао'),
+('MRKU', 'Россети Ур', 'Россети Урал (ПАО) ао'),
+('MRKV', 'РсетВол ао', 'Россети Волга ао'),
+('MRKY', 'РоссЮг ао', 'Россети Юг  (ПАО) ао'),
+('MRKZ', 'РСетиСЗ ао', 'ПАО Россети Северо-Запад ао'),
+('MRSB', 'МордЭнСб', 'Мордовск.энергсбыт.комп.ПАО ао'),
+('MSNG', '+МосЭнерго', 'МосЭнерго акции обыкн.'),
+('MSRS', 'РСетиМР ао', 'ПАО Россети Моск.рег. ао'),
+('MSTT', 'Мостотрест', 'ПАО "МОСТОТРЕСТ" ао'),
+('MTLR', 'Мечел ао', 'Мечел ПАО ао'),
+('MTLRP', 'Мечел ап', 'Мечел ПАО ап'),
+('MTSS', 'МТС-ао', 'Мобильные ТелеСистемы ПАО ао'),
+('MVID', 'М.видео', '"М.видео" ПАО ао'),
+('NAUK', 'iНПОНаука', 'НПО Наука ао'),
+('NFAZ', 'НЕФАЗ', 'НЕФАЗ ПАО ао'),
+('NKHP', 'НКХП ао', 'НКХП ПАО ао'),
+('NKNC', 'НКНХ ао', '"Нижнекамскнефтехим" ПАО ао'),
+('NKNCP', 'НКНХ ап', '"Нижнекамскнефтехим" ПАО ап'),
+('NKSH', 'Нижкамшина', 'Нижнекамскшина ПАО ао'),
+('NLMK', 'НЛМК ао', 'ПАО "НЛМК" ао'),
+('NMTP', 'НМТП ао', 'НМТП (ПАО) ао'),
+('NNSB', 'ТНСэнНН ао', 'ТНС энерго Нижний Новг.ПАО ао'),
+('NNSBP', 'ТНСэнНН ап', 'ТНС энерго Нижний Новг.ПАО ап'),
+('NSVZ', 'iНаукаСвяз', 'Наука-Связь ПАО ао'),
+('NVTK', 'Новатэк ао', 'ПАО "НОВАТЭК" ао'),
+('OGKB', 'ОГК-2 ао', 'ОГК-2 ПАО ао'),
+('OKEY', 'OKEY-гдр', 'ГДР OKEY Group S.A. ORD SHS'),
+('OMZZP', 'ОМЗ-ап', 'ап"Объединён.  маш. заводы"'),
+('OZON', 'OZON-адр', 'АДР Ozon Holdings PLC ORD SHS'),
+('PHOR', 'ФосАгро ао', 'ФосАгро ПАО ао'),
+('PIKK', 'ПИК ао', 'ПИК СЗ (ПАО) ао'),
+('PLZL', 'Полюс', 'Полюс ПАО ао'),
+('PMSB', 'ПермьЭнСб', '"Пермэнергосбыт" ПАО ао'),
+('PMSBP', 'ПермьЭнС-п', '"Пермэнергосбыт" ПАО ап'),
+('POLY', 'Solidcore', 'Solidcore Resources plc'),
+('POSI', 'iПозитив', 'Группа Позитив ао'),
+('PRFN', 'ЧЗПСН ао', 'ЧЗПСН-Профнастил (ПАО) ао'),
+('PRMB', 'Приморье', 'АКБ "Приморье" ао'),
+('PRMD', 'ПРОМОМЕД', 'ПРОМОМЕД'),
+('QIWI', 'iQIWI', 'QIWI PLC'),
+('RASP', 'Распадская', 'ПАО Распадская ао'),
+('RDRB', 'РДБанк ао', 'РоссийскийДорож Банк ПАО ао'),
+('RENI', 'Ренессанс', 'Ренессанс Страхование ао'),
+('RGSS', 'РГС СК ао', 'Росгосстрах СК ПАО ао'),
+('RKKE', 'ЭнергияРКК', 'РКК Энергия им.С.П.Королева ао'),
+('RNFT', 'РуссНфт ао', 'РуссНефть НК ПАО ао'),
+('ROLO', 'Русолово', '"Русолово" ПАО ао'),
+('ROSB', 'Росбанк ао', 'РОСБАНК ПАО ао'),
+('ROSN', 'Роснефть', 'ПАО НК Роснефть'),
+('ROST', 'РОСИНТЕРао', 'РОСИНТЕР РЕСТОРАНТС (ПАО)'),
+('RTGZ', 'ГР Ростов', 'Газпром газорасп Р-н-Д ПАО ао'),
+('RTKM', 'Ростел -ао', 'Ростелеком (ПАО) ао.'),
+('RTKMP', 'Ростел -ап', 'Ростелеком (ПАО) ап.'),
+('RTSB', 'ТНСэнРст', 'ТНС энерго Ростов. ПАО ао'),
+('RTSBP', 'ТНСэнРст-п', 'ТНС энерго Ростов. ПАО ап'),
+('RUAL', 'РУСАЛ ао', 'РУСАЛ ОК МКПАО ао'),
+('RUSI', 'ИКРУСС-ИНВ', 'РУСС-ИНВЕСТ ИК ПАО ао'),
+('RZSB', 'РязЭнСб', '"Рязанская энергосб.комп" ПАО'),
+('SAGO', 'СамарЭн-ао', 'Самараэнерго (ПАО) - ао'),
+('SAGOP', 'СамарЭн-ап', 'Самараэнерго (ПАО) - ап'),
+('SARE', 'СаратЭн-ао', 'Саратовэнерго(ПАО)-ао'),
+('SAREP', 'СаратЭн-ап', 'Саратовэнерго(ПАО)-ап'),
+('SBER', 'Сбербанк', 'Сбербанк России ПАО ао'),
+('SBERP', 'Сбербанк-п', 'Сбербанк России ПАО ап'),
+('SELG', 'Селигдар', 'ПАО "Селигдар"  ао'),
+('SFIN', 'ЭсЭфАй ао', 'ЭсЭфАй ПАО ао'),
+('SGZH', 'Сегежа', 'Сегежа ао'),
+('SIBN', 'Газпрнефть', 'Газпром нефть ПАО ао'),
+('SLEN', 'Сахэнер ао', 'ПАО "Сахалинэнерго" ао'),
+('SMLT', 'Самолет ао', 'ГК Самолет ао'),
+('SNGS', 'Сургнфгз', 'Сургутнефтегаз ПАО акции об.'),
+('SNGSP', 'Сургнфгз-п', 'Сургутнефтегаз ПАО ап'),
+('SOFL', 'iСофтлайн', 'Софтлайн ао'),
+('SPBE', 'СПБ Биржа', 'СПБ Биржа ао'),
+('STSB', 'СтаврЭнСб', 'Ставрополэнергосбыт ПАО ао'),
+('STSBP', 'СтаврЭнСбп', 'Ставрополэнергосбыт ПАО ап'),
+('SVAV', 'СОЛЛЕРС', 'ПАО "СОЛЛЕРС"'),
+('SVCB', 'Совкомбанк', 'Совкомбанк ао'),
+('SVET', 'Светофор', 'Светофор Групп ао'),
+('SVETP', 'Светофор п', 'Светофор Групп ап'),
+('TASB', 'ТамбЭнСб', 'ао"Тамбов.энергсбыт.комп."ПАО'),
+('TASBP', 'ТамбЭнСб-п', 'ап"Тамбов.энергсбыт.комп."ПАО'),
+('TATN', 'Татнфт 3ао', 'ПАО "Татнефть" ао'),
+('TATNP', 'Татнфт 3ап', 'ПАО "Татнефть" ап 3 вып.'),
+('TCSG', 'ТКСХолд ао', 'ТКС Холдинг МКПАО ао'),
+('TGKA', 'ТГК-1', 'ао ПАО "ТГК-1"'),
+('TGKB', 'ТГК-2', 'ао ПАО "ТГК-2"'),
+('TGKBP', 'ТГК-2 ап', 'ап ПАО "ТГК-2"'),
+('TGKN', 'ТГК-14', 'ао ПАО "ТГК-14"'),
+('TNSE', 'ТНСэнрг ао', 'ПАО ГК "ТНС энерго" ао'),
+('TORS', 'РСТомск ао', 'ао ПАО "Россети Томск"'),
+('TORSP', 'РСТомск ап', 'ап ПАО "Россети Томск"'),
+('TRMK', 'ТМК ао', 'ПАО ТМК'),
+('TRNFP', 'Транснф ап', 'Транснефть ПАО акц.пр.'),
+('TTLK', 'Таттел. ао', '"Таттелеком" ПАО ао'),
+('TUZA', 'ТЗА ао', 'Туймаз. завод автобетоновозов'),
+('UGLD', 'ЮГК', 'ЮГК'),
+('UKUZ', 'ЮжКузб. ао', 'Южный Кузбасс ПАО ао'),
+('UNAC', 'iАвиастКао', 'Об.авиастр.корп. ПАО ао'),
+('UNKL', 'ЮУНК ао', 'Южно-Уральский никел. комб. ао'),
+('UPRO', 'Юнипро ао', 'Юнипро ПАО ао'),
+('URKZ', 'УрКузница', 'ПАО "Уральская кузница" ао'),
+('USBN', 'УралСиб ао', 'БАНК УРАЛСИБ ПАО ао'),
+('UTAR', 'ЮТэйр ао', 'Авиакомпания "ЮТэйр" (ПАО) ао'),
+('VEON-RX', 'VEON', 'VEON Ltd. ORD SHS'),
+('VGSB', 'ВолгЭнСб', '"Волгоград.энергосбыткомп" ПАО'),
+('VGSBP', 'ВолгЭнСб-п', '"Волгоград.энергосбыткомп" ПАО'),
+('VJGZ', 'Варьеган', 'ННК-Варьеганнефтегаз ПАО ао'),
+('VJGZP', 'Варьеган-п', 'ННК-Варьеганнефтегаз ПАО ап'),
+('VKCO', 'МКПАО "ВК"', 'Международная компания ПАО ВК'),
+('VLHZ', 'ВХЗ-ао', 'Владимирский химич.з-д(ПАО) ао'),
+('VRSB', 'ТНСэнВорон', 'ТНС энерго Воронеж ПАО ао'),
+('VRSBP', 'ТНСэнВор-п', 'ТНС энерго Воронеж ПАО ап'),
+('VSEH', 'ВИ.ру', 'ВИ.ру'),
+('VSMO', 'ВСМПО-АВСМ', 'Корп. ВСМПО-АВИСМА (ПАО) ао'),
+('VSYD', 'ВыбСудЗ ао', 'Выборгский Суд.Завод ПАО ао'),
+('VSYDP', 'ВыбСудЗ ап', 'Выборгский Суд.Завод ПАО ап'),
+('VTBR', 'ВТБ ао', 'ао ПАО Банк ВТБ'),
+('WTCM', 'ЦМТ ао', '"Центр междун. торговли"ПАО ао'),
+('WTCMP', 'ЦМТ ап', '"Центр междун. торговли"ПАО ап'),
+('WUSH', 'iВУШХолднг', 'ВУШ Холдинг ао'),
+('YAKG', 'ЯТЭК ао', 'Якутская топл.-энерг. комп. ао'),
+('YDEX', 'ЯНДЕКС', 'МКПАО ЯНДЕКС'),
+('YKEN', 'Якутскэнрг', 'АК "Якутскэнерго" (ПАО) ао'),
+('YKENP', 'Якутскэн-п', 'АК "Якутскэнерго" (ПАО) ап'),
+('YRSB', 'ТНСэнЯр', 'ТНС энерго Ярославль ПАО ао'),
+('YRSBP', 'ТНСэнЯр-п', 'ТНС энерго Ярославль ПАО ап'),
+('ZAYM', 'Займер ао', 'Займер ао'),
+('ZILL', 'ЗИЛ ао', 'Завод им. И.А.Лихачева ПАО ао'),
+('ZVEZ', 'ЗВЕЗДА ао', 'ЗВЕЗДА ПАО ао')
+;

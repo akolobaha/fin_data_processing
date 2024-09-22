@@ -22,12 +22,14 @@ CREATE TABLE quotes
     id     SERIAL PRIMARY KEY,
     ticker VARCHAR(255) REFERENCES security (ticker),
     price  DECIMAL(10, 2),
-    time   TIMESTAMP
+    time   TIME,
+    seq_num BIGINT
 );
 COMMENT ON TABLE quotes IS 'Котировки';
 comment on COLUMN quotes.ticker IS 'Тикер';
 comment on COLUMN quotes.price IS 'Цена';
 comment on COLUMN quotes.time IS 'Время';
+comment on COLUMN quotes.seq_num IS 'Номер обновления';
 
 CREATE TABLE "user"
 (
