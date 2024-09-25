@@ -12,11 +12,13 @@ type Config struct {
 	PostgresHost     string `env:"POSTGRES_HOST"`
 	PostgresPort     string `env:"POSTGRES_PORT"`
 	PostgresDatabase string `env:"POSTGRES_DATABASE"`
+	GrpcHost         string `env:"GRPC_HOST"`
+	GrpcPort         string `env:"GRPC_PORT"`
 }
 
 var Cfg *Config
 
-var ConnString string
+var DSN string
 
 func Parse(s string) (*Config, error) {
 	c := &Config{}
@@ -28,8 +30,8 @@ func Parse(s string) (*Config, error) {
 	return c, nil
 }
 
-func InitDbConnectionString(c *Config) {
-	ConnString = fmt.Sprintf(
+func InitDSN(c *Config) {
+	DSN = fmt.Sprintf(
 		"user=%s password=%s dbname=%s host=%s port=%s sslmode=disable",
 		c.PostgresUsername, c.PostgresPassword, c.PostgresDatabase, c.PostgresHost, c.PostgresPort,
 	)

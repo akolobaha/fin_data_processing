@@ -7,7 +7,7 @@ import (
 )
 
 func InsertQuotes(TickerReq *pb.MultipleTickerRequest) error {
-	db := db.GetConnection()
+	db := db.GetDbConnection()
 
 	// Start a transaction
 	tx, err := db.Begin()

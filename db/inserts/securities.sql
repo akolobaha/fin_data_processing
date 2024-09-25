@@ -1,4 +1,4 @@
-INSERT INTO security(ticker, shortname, secname) VALUES
+INSERT INTO securities(ticker, shortname, secname) VALUES
 ('ABIO', 'iАРТГЕН ао', 'ПАО "Артген"'),
 ('ABRD', 'АбрауДюрсо', 'Абрау-Дюрсо ПАО ао'),
 ('ACKO', 'АСКО ао', 'АСКО ПАО ао'),
