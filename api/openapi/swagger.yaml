@@ -1,0 +1,252 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: User Authentication API
+  description: API for financial data processing service
+servers:
+  - url: http://localhost:8080/api/
+    description: Local server
+
+paths:
+  /users:
+    get:
+      summary: Get users
+      parameters:
+        - name: page
+          in: query
+          description: Page number
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Page size
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of users
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Create user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest'
+      responses:
+        '200':
+          description: User successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewUserResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /users/{userId}:
+    get:
+      summary: One user
+      description: Возвращает данные по одному пользователю
+      parameters:
+        - name: userId
+          in: path
+          description: Id пользователя
+          required: true
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of users
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    delete:
+      summary: Delete user
+      description: Удалить пользователя по id
+      parameters:
+        - name: userId
+          in: path
+          description: Id пользователя
+          required: true
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+
+  /users/security-fulfils:
+    post:
+      summary: Create security fulfil
+      description: Целевой показатель пользователя по эмитенту
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest'
+      responses:
+        '200':
+          description: User successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewUserResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      summary: Целевые показатели по эмитентам
+      parameters:
+        - name: page
+          in: query
+          description: Page number
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Page size
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Список целевых показателей по эмитентам
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /users/security-fulfils/{id}:
+    get:
+      summary: Целевой показатель
+      parameters:
+        - name: id
+          in: path
+          description: Id целевого показателя
+          required: true
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of users
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    delete:
+      summary: Delete user
+      description: Удалить пользователя по id
+      parameters:
+        - name: id
+          in: path
+          description: Id пользователя
+          required: true
+          example: 1
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+
+components:
+  schemas:
+    NewUserRequest:
+      type: object
+      properties:
+        telegram:
+          type: string
+          description: Telegram ID пользователя
+          example: "telegram_login"
+        name:
+          type: string
+          description: Имя пользователя
+          example: "username"
+      required:
+        - telegram
+        - name
+    NewUserResponse:
+      type: object
+      required:
+        - id
+        - telegram
+        - name
+      properties:
+        id:
+          type: integer
+          description: Id пользователя
+          example: 1
+        telegram:
+          type: string
+          description: Telegram ID пользователя
+          example: "telegram_login"
+        name:
+          type: string
+          description: Имя пользователя
+          example: "username"
+
+    NewSecurityFulfil:
+      type: object
+      properties:
+        telegram:
+          type: string
+          description: Telegram ID пользователя
+          example: "telegram_login"
+        name:
+          type: string
+          description: Имя пользователя
+          example: "username"
+      required:
+        - telegram
+        - name
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Description of the error
+      required:
+        - error

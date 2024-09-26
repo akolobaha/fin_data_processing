@@ -43,7 +43,7 @@ COMMENT ON COLUMN "users".name IS 'Телеграмм';
 CREATE TABLE user_security_fulfils
 (
     id               SERIAL PRIMARY KEY,
-    ticker           VARCHAR(255) REFERENCES securities (ticker),
+    ticker           VARCHAR(255) REFERENCES securities (ticker) ON DELETE CASCADE,
     user_id          int REFERENCES users(id),
     p_e_msfo_fulfil  DECIMAL(10, 2),
     p_bv_msfo_fulfil DECIMAL(10, 2)
