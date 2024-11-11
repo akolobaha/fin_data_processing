@@ -82,5 +82,5 @@ func UserDelete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	renderJSON(w, []string{"ok"})
+	w.WriteHeader(http.StatusNoContent)
 }
