@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/akolobaha/fin_quotes.pb";
+
+service DataManagementService {
+  rpc GetMultipleQuotes (MultipleTickerRequest) returns (TickerResponse);
+}
+
+message TickerRequest {
+  string Name = 1;
+  float Price = 2;
+  google.protobuf.Timestamp Time = 3;
+  int64 SeqNum = 4;
+}
+
+message TickerResponse {
+  google.protobuf.Empty response = 1;
+}
+
+message MultipleTickerRequest {
+  repeated TickerRequest tickers = 1;  // Массив запросов
+}

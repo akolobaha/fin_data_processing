@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.goose_db_version</OriginalElement>
+  <nodes>
+    <node x="-171.0" y="-92.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security</node>
+    <node x="-211.0" y="280.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security_financial_report_msfo</node>
+    <node x="218.5" y="-92.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user</node>
+    <node x="252.0" y="116.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.quotes</node>
+    <node x="-208.5" y="-284.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.goose_db_version</node>
+    <node x="377.0" y="496.0">5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user_security_fulfil</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.user_security_fulfil" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-68.0" />
+      <point x="580.0" y="84.0" />
+      <point x="0.0" y="84.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.quotes" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-68.0" />
+      <point x="360.0" y="84.0" />
+      <point x="0.0" y="84.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security_financial_report_msfo" target="5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.security" relationship="REFERENCES">
+      <point x="0.0" y="-284.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5868055555555556" showDependencies="false" x="286.0" y="282.0" />
+  <SelectedNodes>
+    <node>5cdb7147-150b-4529-b484-0c33b563c2b4.TABLE:fin.public.goose_db_version</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
