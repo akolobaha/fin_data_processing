@@ -11,7 +11,7 @@ import (
 )
 
 func GetDbConnection() *sql.DB {
-	db, err := sql.Open("postgres", config.DSN)
+	db, err := sql.Open("postgres", config.DbDsn)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,7 +27,7 @@ func GetDbConnection() *sql.DB {
 func GetGormDbConnection() *gorm.DB {
 
 	db, err := gorm.Open(postgres.New(postgres.Config{
-		DSN:                  config.DSN,
+		DSN:                  config.DbDsn,
 		PreferSimpleProtocol: true, // disables implicit prepared statement usage
 	}), &gorm.Config{})
 

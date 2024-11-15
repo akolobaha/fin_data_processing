@@ -12,10 +12,12 @@ func main() {
 	if err != nil {
 		panic("Ошибка парсинга конфигов")
 	}
-	config.InitDSN(cfg)
+	config.InitDbDSN(cfg)
+	config.InitRabbitDSN(cfg)
 
-	commands.RunGrpc(cfg)
-	commands.RunHttp(cfg)
+	//commands.RunGrpc(cfg)
+	//commands.RunHttp(cfg)
+	commands.RunFundamentalsListener(cfg)
 
 	// Обработка сигналов завершения
 
