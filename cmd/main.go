@@ -35,10 +35,13 @@ func main() {
 	//commands.RunRabbitConsumer(config.RabbitDsn, cfg.RabbitQueueFundamentals, handlerFunc)
 	//commands.RunRabbitConsumer(config.RabbitDsn, cfg.RabbitQueueQuotes, handlerFunc)
 
-	//select {}
-
 	cmd := commands.ReadFromQueue(cfg, config.RabbitDsn, ctx)
 
+	//secs := entities.FetchSecurities()
+
+	//fmt.Println(secs, ctx.Err())
+
+	//select {}
 	err = cmd.ExecuteContext(ctx)
 	if err != nil {
 		fmt.Println(err)
