@@ -28,7 +28,10 @@ func InsertQuotes(TickerReq *pb.MultipleTickerRequest) error {
 
 		_, err := stmt.Exec(ticker.Name, ticker.Price, ticker.Time.AsTime(), ticker.SeqNum)
 		if err != nil {
-			tx.Rollback() // Rollback if there is an error
+			err := tx.Rollback()
+			if err != nil {
+				return err
+			} // Rollback if there is an error
 			slog.Error(err.Error())
 			return err
 		}
