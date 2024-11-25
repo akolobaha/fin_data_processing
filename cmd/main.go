@@ -29,12 +29,6 @@ func main() {
 		cancel()
 	}()
 
-	//commands.RunGrpc(cfg)
-	//commands.RunHttp(cfg)
-
-	//commands.RunRabbitConsumer(config.RabbitDsn, cfg.RabbitQueueFundamentals, handlerFunc)
-	//commands.RunRabbitConsumer(config.RabbitDsn, cfg.RabbitQueueQuotes, handlerFunc)
-
 	cmd := commands.ReadFromQueue(cfg, config.RabbitDsn, ctx)
 
 	//secs := entities.FetchSecurities()
@@ -47,7 +41,4 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-
-	// Обработка сигналов завершения
-
 }

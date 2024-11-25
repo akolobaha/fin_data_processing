@@ -16,7 +16,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - 5432:5432
+      - "5433:5432"
     volumes:
 #      - ./backend/db/migrations:/docker-entrypoint-initdb.d
       - ./docker/pgdata:/var/lib/postgresql/data
@@ -33,7 +33,6 @@ services:
       dockerfile: Dockerfile
     container_name: data-processing-app
     ports:
-      - "8080:8080"
       - "50052:50052"
     depends_on:
       - db

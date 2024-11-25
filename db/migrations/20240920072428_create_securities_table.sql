@@ -1,18 +1,6 @@
 -- +goose Up
 -- +goose StatementBegin
 SELECT 'up SQL query';
-CREATE TABLE IF NOT EXISTS securities
-(
-    ticker    VARCHAR(255) PRIMARY KEY,
-    shortname VARCHAR(255),
-    secname   VARCHAR(255)
-);
-COMMENT ON TABLE securities IS 'Эмитенты';
-COMMENT ON COLUMN securities.ticker IS 'Тикер';
-COMMENT ON COLUMN securities.shortname IS 'Краткое наименование';
-COMMENT ON COLUMN securities.secname IS 'Полное наименование';
-
-CREATE INDEX idx_security_ticker ON securities (ticker);
 
 CREATE TYPE currency AS ENUM ('RUB', 'USD', 'EUR', 'CYN');
 COMMENT ON TYPE currency IS 'Валюты';
@@ -20,7 +8,7 @@ COMMENT ON TYPE currency IS 'Валюты';
 CREATE TABLE quotes
 (
     id     SERIAL PRIMARY KEY,
-    ticker VARCHAR(255) REFERENCES securities (ticker),
+    ticker VARCHAR(10),
     price  DECIMAL(10, 2),
     time   TIME,
     seq_num BIGINT
@@ -31,33 +19,10 @@ comment on COLUMN quotes.price IS 'Цена';
 comment on COLUMN quotes.time IS 'Время';
 comment on COLUMN quotes.seq_num IS 'Номер обновления';
 
-CREATE TABLE "users"
-(
-    id       SERIAL PRIMARY KEY,
-    name     VARCHAR(255) NOT NULL,
-    telegram VARCHAR(255) NOT NULL UNIQUE
-);
-COMMENT ON COLUMN "users".name IS 'Имя';
-COMMENT ON COLUMN "users".name IS 'Телеграмм';
-
-CREATE TABLE user_security_fulfils
-(
-    id               SERIAL PRIMARY KEY,
-    ticker           VARCHAR(255) REFERENCES securities (ticker) ON DELETE CASCADE,
-    user_id          int REFERENCES users(id),
-    p_e_msfo_fulfil  DECIMAL(10, 2),
-    p_bv_msfo_fulfil DECIMAL(10, 2)
-);
-COMMENT ON TABLE user_security_fulfils IS 'Цели пользователей по эмитентам';
-COMMENT ON COLUMN user_security_fulfils.ticker IS 'Тикер';
-COMMENT ON COLUMN user_security_fulfils.user_id IS 'ID пользователя';
-COMMENT ON COLUMN user_security_fulfils.p_e_msfo_fulfil IS 'Цель по P/E (МСФО)';
-COMMENT ON COLUMN user_security_fulfils.p_bv_msfo_fulfil IS 'Цель по P/BV (МСФО)';
-
 CREATE TABLE security_financial_report_msfo
 (
     id SERIAL PRIMARY KEY,
-    ticker VARCHAR(255) REFERENCES securities(ticker),
+    ticker VARCHAR(10),
     year SMALLINT,
     quarter SMALLINT CHECK ( quarter >= 1 AND quarter <= 4),
     report_date DATE,
@@ -108,9 +73,6 @@ COMMENT ON COLUMN security_financial_report_msfo.book_value IS 'Балансов
 -- +goose StatementBegin
 SELECT 'down SQL query';
 DROP TABLE IF EXISTS security_financial_report_msfo;
-DROP TABLE IF EXISTS user_security_fulfils;
 DROP TABLE IF EXISTS quotes;
-DROP TABLE IF EXISTS securities;
-DROP TABLE IF EXISTS "users";
 DROP TYPE currency;
 -- +goose StatementEnd
