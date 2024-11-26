@@ -23,7 +23,7 @@ type TargetUser struct {
 	User   User
 }
 
-func FetchTargets() []TargetUser {
+func FetchTargets(ticker string) []TargetUser {
 	conn, err := grpc.NewClient("localhost:50052", grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
 
 	if err != nil {
@@ -36,7 +36,7 @@ func FetchTargets() []TargetUser {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	req := &pb.TargetRequest{}
+	req := &pb.TargetRequest{Ticker: ticker}
 
 	response, err := client.GetTargets(ctx, req)
 	if err != nil {
