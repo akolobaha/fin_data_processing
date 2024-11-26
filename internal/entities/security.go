@@ -28,7 +28,7 @@ func FetchSecurities() Securities {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	req := &pb.TickersRequest{} // Заполнение запроса, если необходимо
+	req := &pb.TickersRequest{}
 
 	response, err := client.GetMultipleTickers(ctx, req)
 	if err != nil {

@@ -4,6 +4,7 @@ import (
 	"context"
 	"fin_data_processing/cmd/commands"
 	"fin_data_processing/internal/config"
+	"fin_data_processing/internal/entities"
 	"fmt"
 	"os"
 	"os/signal"
@@ -32,8 +33,10 @@ func main() {
 	cmd := commands.ReadFromQueue(cfg, config.RabbitDsn, ctx)
 
 	//secs := entities.FetchSecurities()
+	targ := entities.FetchTargets()
 
 	//fmt.Println(secs, ctx.Err())
+	fmt.Println(targ, ctx.Err())
 
 	//select {}
 	err = cmd.ExecuteContext(ctx)

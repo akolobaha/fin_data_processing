@@ -1,7 +1,8 @@
 package entities
 
 type User struct {
-	ID       uint   `gorm:"primaryKey"`
-	Name     string `gorm:"not null"`
-	Telegram string `gorm:"not null"`
+	ID       int64
+	Name     string
+	Email    string
+	Telegram string
 }
