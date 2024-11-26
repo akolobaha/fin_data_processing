@@ -33,7 +33,8 @@ func main() {
 
 	//secs := entities.FetchSecurities()
 	//targ := entities.FetchTargets("ROSN")
-
+	//targ := entities.SetTargetAchieved(9, false)
+	//
 	//fmt.Println(secs, ctx.Err())
 	//fmt.Println(targ, ctx.Err())
 

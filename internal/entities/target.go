@@ -64,3 +64,41 @@ func FetchTargets(ticker string) []TargetUser {
 
 	return targetsUsers
 }
+
+func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
+	conn, err := grpc.NewClient("localhost:50052", grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
+
+	if err != nil {
+		log.Fatalf("did not connect: %v", err)
+	}
+	defer conn.Close()
+
+	client := pb.NewTargetsServiceClient(conn)
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+
+	req := &pb.TargetAchievedRequest{Id: targetId, Achieved: achieved}
+
+	response, err := client.SetTargetAchieved(ctx, req)
+	if err != nil {
+		log.Fatalf("could not set target achieved: %v", err)
+	}
+
+	return TargetUser{
+		Target: Target{
+			Id:                 response.Id,
+			Ticker:             response.Ticker,
+			ValuationRatio:     response.ValuationRatio,
+			FinancialReport:    response.FinancialReport,
+			Achieved:           response.Achieved,
+			NotificationMethod: response.NotificationMethod,
+		},
+		User: User{
+			ID:       response.User.Id,
+			Name:     response.User.Name,
+			Email:    response.User.Email,
+			Telegram: response.User.Telegram,
+		},
+	}
+}
