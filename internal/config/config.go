@@ -20,10 +20,15 @@ type Config struct {
 	RabbitPort              string `env:"RABBIT_PORT"`
 	RabbitQueueQuotes       string `env:"RABBIT_QUEUE_QUOTES"`
 	RabbitQueueFundamentals string `env:"RABBIT_QUEUE_FUNDAMENTALS"`
+	MongoUsername           string `env:"MONGO_USERNAME"`
+	MongoPassword           string `env:"MONGO_PASSWORD"`
+	MongoHost               string `env:"MONGO_HOST"`
+	MongoPort               string `env:"MONGO_PORT"`
+	MongoDatabase           string `env:"MONGO_DATABASE"`
+	MongoCollection         string `env:"MONGO_COLLECTION"`
 }
 
 var DbDsn string
-var RabbitDsn string
 
 func Parse(s string) (*Config, error) {
 	c := &Config{}
@@ -34,15 +39,20 @@ func Parse(s string) (*Config, error) {
 	return c, nil
 }
 
-func InitDbDSN(c *Config) {
-	DbDsn = fmt.Sprintf(
+func (cfg *Config) GetPostgresDSN() string {
+	return fmt.Sprintf(
 		"user=%s password=%s dbname=%s host=%s port=%s sslmode=disable",
-		c.PostgresUsername, c.PostgresPassword, c.PostgresDatabase, c.PostgresHost, c.PostgresPort,
+		cfg.PostgresUsername, cfg.PostgresPassword, cfg.PostgresDatabase, cfg.PostgresHost, cfg.PostgresPort,
 	)
 }
 
-func InitRabbitDSN(c *Config) {
-	RabbitDsn = fmt.Sprintf(
-		"amqp://%s:%s@%s:%s/", c.RabbitUsername, c.RabbitPassword, c.RabbitHost, c.RabbitPort,
+func (cfg *Config) GetRabbitDSN() string {
+	return fmt.Sprintf(
+		"amqp://%s:%s@%s:%s/", cfg.RabbitUsername, cfg.RabbitPassword, cfg.RabbitHost, cfg.RabbitPort,
 	)
+}
+
+func (cfg *Config) GetMongoDSN() string {
+	return fmt.Sprintf(
+		"mongodb://%s:%s@%s:%s/admin", cfg.MongoUsername, cfg.MongoPassword, cfg.MongoHost, cfg.MongoPort)
 }

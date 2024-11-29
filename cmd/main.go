@@ -17,8 +17,6 @@ func main() {
 	if err != nil {
 		panic("Ошибка парсинга конфигов")
 	}
-	config.InitDbDSN(cfg)
-	config.InitRabbitDSN(cfg)
 
 	ctx, cancel := context.WithCancel(context.Background())
 
@@ -29,7 +27,7 @@ func main() {
 		cancel()
 	}()
 
-	cmd := commands.ReadFromQueue(cfg, config.RabbitDsn, ctx)
+	cmd := commands.ReadFromQueue(ctx, cfg)
 
 	//secs := entities.FetchSecurities()
 	//targ := entities.FetchTargets("ROSN")

@@ -22,7 +22,18 @@ services:
       - ./docker/pgdata:/var/lib/postgresql/data
     networks:
       - fin-network
-
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017" # Expose MongoDB on port 27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME} # Set the root username
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD} # Set the root password
+    volumes:
+      - ./docker/mongo_data:/data/db
+    networks:
+      - fin-network
   app:
     image: my-go-app
     volumes:
@@ -39,10 +50,11 @@ services:
     links:
       - db
     environment:
-      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_HOST: ${POSTGRES_HOST}ва
       POSTGRES_PORT: ${POSTGRES_PORT}
       POSTGRES_USER: ${POSTGRES_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DATABASE}
     networks:
       - fin-network
+

@@ -1,11 +1,13 @@
 package db
 
 import (
+	"context"
 	"database/sql"
 	"fin_data_processing/internal/config"
+	"fmt"
 	_ "github.com/lib/pq"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
 	"log/slog"
 )
@@ -24,16 +26,25 @@ func GetDbConnection() *sql.DB {
 	return db
 }
 
-func GetGormDbConnection() *gorm.DB {
+func GetMongoDbConnection(ctx context.Context, cfg *config.Config) *mongo.Client {
+	clientOptions := options.Client().ApplyURI(cfg.GetMongoDSN())
 
-	db, err := gorm.Open(postgres.New(postgres.Config{
-		DSN:                  config.DbDsn,
-		PreferSimpleProtocol: true, // disables implicit prepared statement usage
-	}), &gorm.Config{})
+	client, err := mongo.Connect(context.TODO(), clientOptions)
 
 	if err != nil {
-		slog.Error(err.Error())
+		log.Fatal(err)
 	}
 
-	return db
+	err = client.Ping(context.TODO(), nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = client.Ping(context.TODO(), nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Connected to MongoDB!")
+
+	return client
 }

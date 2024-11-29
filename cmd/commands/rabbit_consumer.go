@@ -3,17 +3,18 @@ package commands
 import (
 	"context"
 	"fin_data_processing/internal/config"
+	"fin_data_processing/internal/service"
 	"github.com/spf13/cobra"
 	"github.com/streadway/amqp"
 	"log"
 	"log/slog"
 )
 
-func ReadFromQueue(cfg *config.Config, dsn string, ctx context.Context) *cobra.Command {
+func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 	c := &cobra.Command{
 		RunE: func(cmd *cobra.Command, args []string) error {
 
-			conn, err := amqp.Dial(dsn)
+			conn, err := amqp.Dial(cfg.GetRabbitDSN())
 			if err != nil {
 				slog.Error("Failed to connect to RabbitMQ: %s", err)
 			}
@@ -51,12 +52,13 @@ func ReadFromQueue(cfg *config.Config, dsn string, ctx context.Context) *cobra.C
 
 			for {
 				select {
-
 				case msg := <-msgsFundamental:
 					log.Printf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body)
+					service.SaveFundamentalMsg(ctx, msg, cfg)
 				case msg := <-msgsQuotes:
 					log.Printf("Received quotes from %s: %s", cfg.RabbitQueueQuotes, msg.Body)
 				case <-ctx.Done():
+
 					slog.Info("Сбор данных остановлен")
 					return nil
 				}
