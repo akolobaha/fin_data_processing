@@ -2,7 +2,9 @@ package commands
 
 import (
 	"context"
+	"encoding/json"
 	"fin_data_processing/internal/config"
+	"fin_data_processing/internal/entities"
 	"fin_data_processing/internal/service"
 	"github.com/spf13/cobra"
 	"github.com/streadway/amqp"
@@ -53,13 +55,39 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 			for {
 				select {
 				case msg := <-msgsFundamental:
+					// Сохранение фундаментала
 					log.Printf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body)
-					service.SaveFundamentalMsg(ctx, msg, cfg)
+					err := service.SaveFundamentalMsg(ctx, msg, cfg)
+					if err != nil {
+						slog.Error("Failed to save fundamentals: %s", err)
+					}
 				case msg := <-msgsQuotes:
-					log.Printf("Received quotes from %s: %s", cfg.RabbitQueueQuotes, msg.Body)
-				case <-ctx.Done():
+					// Получили котировку
+					quote := entities.Quote{}
+					if err := json.Unmarshal(msg.Body, &quote); err != nil {
+						log.Printf("Ошибка при разборе сообщения: %s", err)
+					}
 
-					slog.Info("Сбор данных остановлен")
+					targets := entities.FetchTargets(quote.Ticker)
+
+					if len(targets) > 0 {
+						for _, target := range targets {
+
+							latestFundamental, err := service.GetLatestQuarterReport(ctx, cfg, quote.Ticker, target.Target.FinancialReport)
+							if err != nil {
+								slog.Error(err.Error())
+								continue
+							}
+
+							achieved, _ := service.TargetsAchievementCheck(target, latestFundamental, quote)
+							if achieved {
+								entities.SetTargetAchieved(target.Target.Id, achieved)
+							}
+						}
+					}
+
+				case <-ctx.Done():
+					slog.Info("Сервис обработки данных остановлен")
 					return nil
 				}
 

@@ -50,6 +50,7 @@ func FetchTargets(ticker string) []TargetUser {
 			Id:                 t.Id,
 			Ticker:             t.Ticker,
 			ValuationRatio:     t.ValuationRatio,
+			Value:              float64(t.Value),
 			FinancialReport:    t.FinancialReport,
 			Achieved:           t.Achieved,
 			NotificationMethod: t.NotificationMethod,
