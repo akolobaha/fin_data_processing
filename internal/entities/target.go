@@ -2,9 +2,11 @@ package entities
 
 import (
 	"context"
+	"fin_data_processing/internal/config"
 	pb "fin_data_processing/pkg/grpc"
 	"google.golang.org/grpc"
 	"log"
+	"log/slog"
 	"time"
 )
 
@@ -19,12 +21,13 @@ type Target struct {
 }
 
 type TargetUser struct {
-	Target Target
-	User   User
+	Target      Target
+	User        User
+	ResultValue float64
 }
 
-func FetchTargets(ticker string) []TargetUser {
-	conn, err := grpc.NewClient("localhost:50052", grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
+func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
+	conn, err := grpc.NewClient(cfg.GetGrpc(), grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
 
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
@@ -40,7 +43,8 @@ func FetchTargets(ticker string) []TargetUser {
 
 	response, err := client.GetTargets(ctx, req)
 	if err != nil {
-		log.Fatalf("could not get targets: %v", err)
+		slog.Error("could not get targets: %v", err)
+		return []TargetUser{}
 	}
 
 	targetsUsers := make([]TargetUser, len(response.Targets))

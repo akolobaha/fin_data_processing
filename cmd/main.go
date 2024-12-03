@@ -29,13 +29,6 @@ func main() {
 
 	cmd := commands.ReadFromQueue(ctx, cfg)
 
-	//secs := entities.FetchSecurities()
-	//targ := entities.FetchTargets("ROSN")
-	//targ := entities.SetTargetAchieved(9, false)
-	//
-	//fmt.Println(secs, ctx.Err())
-	//fmt.Println(targ, ctx.Err())
-
 	//select {}
 	err = cmd.ExecuteContext(ctx)
 	if err != nil {

@@ -11,6 +11,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log/slog"
 	"strings"
 
 	"log"
@@ -59,9 +60,9 @@ func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Conf
 
 	// Обработка результата
 	if updateResult.UpsertedCount > 0 {
-		log.Println("Inserted a new document with ID:", updateResult.UpsertedID)
+		slog.Info("Inserted a new document with ID:", updateResult.UpsertedID)
 	} else {
-		log.Println("Updated an existing document.")
+		slog.Info("Updated an existing document.")
 	}
 
 	return nil
@@ -91,6 +92,8 @@ func GetLatestQuarterReport(ctx context.Context, cfg *config.Config, ticker stri
 			log.Fatal(err)
 		}
 	}
+
+	slog.Info("Получили самый свежий отчет по эмитунту ", fundamental.Ticker, fundamental.Report)
 
 	return fundamental, nil
 }
