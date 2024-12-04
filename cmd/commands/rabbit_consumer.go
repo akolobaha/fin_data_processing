@@ -82,7 +82,11 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 								continue
 							}
 
-							achieved, resultValue := service.TargetsAchievementCheck(target, latestFundamental, quote)
+							achieved, resultValue, err := service.TargetsAchievementCheck(target, latestFundamental, quote)
+							if err != nil {
+								slog.Error(err.Error())
+								continue
+							}
 							if achieved {
 								target.ResultValue = resultValue
 								entities.SetTargetAchieved(target.Target.Id, achieved)
