@@ -5,6 +5,7 @@ import (
 	"fin_data_processing/internal/config"
 	pb "fin_data_processing/pkg/grpc"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"log/slog"
 	"time"
@@ -27,7 +28,7 @@ type TargetUser struct {
 }
 
 func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
-	conn, err := grpc.NewClient(cfg.GetGrpc(), grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
+	conn, err := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
@@ -43,7 +44,7 @@ func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
 
 	response, err := client.GetTargets(ctx, req)
 	if err != nil {
-		slog.Error("could not get targets: %v", err)
+		slog.Error("could not get targets: %v", "error", err)
 		return []TargetUser{}
 	}
 
@@ -71,7 +72,7 @@ func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
 }
 
 func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
-	conn, err := grpc.NewClient("localhost:50052", grpc.WithInsecure()) // Убедитесь, что порт совпадает с вашим сервером
+	conn, err := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)

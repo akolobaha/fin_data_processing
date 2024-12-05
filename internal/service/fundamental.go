@@ -19,7 +19,12 @@ import (
 
 func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Config) error {
 	client := db.GetMongoDbConnection(ctx, cfg)
-	defer client.Disconnect(ctx)
+	defer func(client *mongo.Client, ctx context.Context) {
+		err := client.Disconnect(ctx)
+		if err != nil {
+			slog.Error("Failed to disconnect from database", "error", err)
+		}
+	}(client, ctx)
 
 	// Get a handle for your collection
 	collection := client.Database(cfg.MongoDatabase).Collection(cfg.MongoCollection)
@@ -70,7 +75,12 @@ func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Conf
 
 func GetLatestQuarterReport(ctx context.Context, cfg *config.Config, ticker string, reportMethod string) (entities.Fundamental, error) {
 	client := db.GetMongoDbConnection(ctx, cfg)
-	defer client.Disconnect(ctx)
+	defer func(client *mongo.Client, ctx context.Context) {
+		err := client.Disconnect(ctx)
+		if err != nil {
+			slog.Error("MongoDB disconnect error:", "error", err)
+		}
+	}(client, ctx)
 
 	collection := client.Database(cfg.MongoDatabase).Collection(cfg.MongoCollection)
 
@@ -80,7 +90,9 @@ func GetLatestQuarterReport(ctx context.Context, cfg *config.Config, ticker stri
 		"Period":       "quarter",
 	}
 
-	opts := options.FindOne().SetSort(bson.D{{"Report", -1}})
+	opts := options.FindOne().SetSort(bson.D{
+		{Key: "Report", Value: -1},
+	})
 
 	// Выполняем запрос
 	var fundamental entities.Fundamental

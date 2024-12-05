@@ -22,13 +22,13 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 
 			conn, err := amqp.Dial(cfg.GetRabbitDSN())
 			if err != nil {
-				slog.Error("Failed to connect to RabbitMQ: %s", err)
+				slog.Error("Failed to connect to RabbitMQ: %s", "error", err)
 			}
 			defer conn.Close()
 
 			ch, err := conn.Channel()
 			if err != nil {
-				slog.Error("Failed to open a channel: %s", err)
+				slog.Error("Failed to open a channel: %s", "error", err)
 			}
 			defer ch.Close()
 
@@ -41,6 +41,10 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 				false,
 				nil,
 			)
+
+			if err != nil {
+				log.Fatalf("Failed to register a consumer: %s", err)
+			}
 
 			msgsQuotes, err := ch.Consume(
 				cfg.RabbitQueueQuotes,
@@ -63,7 +67,7 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 					log.Printf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body)
 					err := service.SaveFundamentalMsg(ctx, msg, cfg)
 					if err != nil {
-						slog.Error("Failed to save fundamentals: %s", err)
+						slog.Error("Failed to save fundamentals: %s", "error", err)
 					}
 				case msg := <-msgsQuotes:
 					// Получили котировку
