@@ -38,8 +38,8 @@ func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Conf
 		ReportMethod: headers["ReportMethod"].(string),
 		Report:       headers["Report"].(string),
 		Period:       headers["Period"].(string),
-		ReportUrl:    headers["ReportUrl"].(string),
-		SourceUrl:    headers["SourceUrl"].(string),
+		ReportURL:    headers["ReportUrl"].(string),
+		SourceURL:    headers["SourceUrl"].(string),
 	}
 	if err := json.Unmarshal(msg.Body, &data); err != nil {
 		slog.Error(fmt.Sprintf("Ошибка при разборе сообщения: %s", err))
@@ -99,9 +99,9 @@ func GetLatestQuarterReport(ctx context.Context, cfg *config.Config, ticker stri
 	if err != nil {
 		if errors.Is(err, mongo.ErrNoDocuments) {
 			return fundamental, err
-		} else {
-			slog.Error(err.Error())
 		}
+		slog.Error(err.Error())
+
 	}
 
 	slog.Info("Получили самый свежий отчет по эмитунту ", fundamental.Ticker, fundamental.Report)

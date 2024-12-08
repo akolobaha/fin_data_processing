@@ -12,7 +12,7 @@ import (
 )
 
 type Target struct {
-	Id                 int64
+	ID                 int64
 	Ticker             string
 	ValuationRatio     string
 	Value              float64
@@ -28,7 +28,7 @@ type TargetUser struct {
 }
 
 func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
-	conn, err := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient(cfg.GetGrpc(), grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
@@ -52,7 +52,7 @@ func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
 
 	for i, t := range response.Targets {
 		targetsUsers[i].Target = Target{
-			Id:                 t.Id,
+			ID:                 t.Id,
 			Ticker:             t.Ticker,
 			ValuationRatio:     t.ValuationRatio,
 			Value:              float64(t.Value),
@@ -71,7 +71,7 @@ func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
 	return targetsUsers
 }
 
-func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
+func SetTargetAchieved(targetID int64, achieved bool) TargetUser {
 	conn, err := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
@@ -84,7 +84,7 @@ func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	req := &pb.TargetAchievedRequest{Id: targetId, Achieved: achieved}
+	req := &pb.TargetAchievedRequest{Id: targetID, Achieved: achieved}
 
 	response, err := client.SetTargetAchieved(ctx, req)
 	if err != nil {
@@ -93,7 +93,7 @@ func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
 
 	return TargetUser{
 		Target: Target{
-			Id:                 response.Id,
+			ID:                 response.Id,
 			Ticker:             response.Ticker,
 			ValuationRatio:     response.ValuationRatio,
 			FinancialReport:    response.FinancialReport,

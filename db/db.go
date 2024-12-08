@@ -3,7 +3,6 @@ package db
 import (
 	"context"
 	"fin_data_processing/internal/config"
-	_ "github.com/lib/pq"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log/slog"

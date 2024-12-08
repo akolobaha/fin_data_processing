@@ -4,7 +4,6 @@ import (
 	"context"
 	"fin_data_processing/cmd/commands"
 	"fin_data_processing/internal/config"
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -27,12 +26,8 @@ func main() {
 		cancel()
 	}()
 
-	cmd := commands.ReadFromQueue(ctx, cfg)
-
-	//select {}
-	err = cmd.ExecuteContext(ctx)
+	err = commands.ReadFromQueue(ctx, cfg)
 	if err != nil {
-		fmt.Println(err)
 		return
 	}
 }

@@ -7,8 +7,8 @@ type Fundamental struct {
 	Period       string
 	Date         string `bson:"Date" json:"Date"`
 	Currency     string `bson:"Currency" json:"Currency"`
-	SourceUrl    string
-	ReportUrl    string
+	SourceURL    string
+	ReportURL    string
 	Revenue      uint64 `bson:"Revenue" json:"Revenue"`
 	NetIncome    uint64 `bson:"NetIncome" json:"NetIncome"` // Чистая прибыль
 	BookValue    uint64 `bson:"BookValue" json:"BookValue"`

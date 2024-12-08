@@ -7,10 +7,10 @@ import (
 )
 
 const (
-	TARGET_PBV   = "pbv"
-	TARGET_PE    = "pe"
-	TARGET_PS    = "ps"
-	TARGET_PRICE = "price"
+	TargetPbv   = "pbv"
+	TargetPe    = "pe"
+	TargetPs    = "ps"
+	TargetPrice = "price"
 )
 
 func TargetsAchievementCheck(target entities.TargetUser, fundamental entities.Fundamental, quote entities.Quote) (isAchieved bool, currResult float64, err error) {
@@ -18,13 +18,13 @@ func TargetsAchievementCheck(target entities.TargetUser, fundamental entities.Fu
 	targetDec := decimal.NewFromFloat(target.Target.Value)
 
 	switch target.Target.ValuationRatio {
-	case TARGET_PBV:
+	case TargetPbv:
 		return checkRatio(targetDec, capitalization, fundamental.BookValue, "book value")
-	case TARGET_PE:
+	case TargetPe:
 		return checkRatio(targetDec, capitalization, fundamental.NetIncome, "net income")
-	case TARGET_PS:
+	case TargetPs:
 		return checkRatio(targetDec, capitalization, fundamental.Revenue, "revenue")
-	case TARGET_PRICE:
+	case TargetPrice:
 		return target.Target.Value >= float64(quote.Price), float64(quote.Price), nil
 	default:
 		return false, 0, nil
