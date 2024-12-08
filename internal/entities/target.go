@@ -88,7 +88,7 @@ func SetTargetAchieved(targetId int64, achieved bool) TargetUser {
 
 	response, err := client.SetTargetAchieved(ctx, req)
 	if err != nil {
-		log.Fatalf("could not set target achieved: %v", err)
+		slog.Error("could not set target achieved: %v", "error", err)
 	}
 
 	return TargetUser{

@@ -7,9 +7,9 @@ import (
 	"fin_data_processing/internal/entities"
 	"fin_data_processing/internal/service"
 	"fin_data_processing/internal/transport"
+	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/streadway/amqp"
-	"log"
 	"log/slog"
 )
 
@@ -43,7 +43,7 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 			)
 
 			if err != nil {
-				log.Fatalf("Failed to register a consumer: %s", err)
+				slog.Error("Failed to register a consumer: ", "error", err)
 			}
 
 			msgsQuotes, err := ch.Consume(
@@ -57,14 +57,14 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 			)
 
 			if err != nil {
-				log.Fatalf("Failed to register a consumer: %s", err)
+				slog.Error("Failed to register a consumer: ", "error", err)
 			}
 
 			for {
 				select {
 				case msg := <-msgsFundamental:
 					// Сохранение фундаментала
-					log.Printf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body)
+					slog.Error(fmt.Sprintf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body))
 					err := service.SaveFundamentalMsg(ctx, msg, cfg)
 					if err != nil {
 						slog.Error("Failed to save fundamentals: %s", "error", err)
@@ -73,7 +73,7 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) *cobra.Command {
 					// Получили котировку
 					quote := entities.Quote{}
 					if err := json.Unmarshal(msg.Body, &quote); err != nil {
-						log.Printf("Ошибка при разборе сообщения: %s", err)
+						slog.Error(fmt.Sprintf("Ошибка при разборе сообщения: %s", err))
 					}
 
 					targets := entities.FetchTargets(quote.Ticker, cfg)

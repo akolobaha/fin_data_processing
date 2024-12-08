@@ -7,14 +7,13 @@ import (
 	"fin_data_processing/db"
 	"fin_data_processing/internal/config"
 	"fin_data_processing/internal/entities"
+	"fmt"
 	"github.com/streadway/amqp"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log/slog"
 	"strings"
-
-	"log"
 )
 
 func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Config) error {
@@ -43,7 +42,7 @@ func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Conf
 		SourceUrl:    headers["SourceUrl"].(string),
 	}
 	if err := json.Unmarshal(msg.Body, &data); err != nil {
-		log.Printf("Ошибка при разборе сообщения: %s", err)
+		slog.Error(fmt.Sprintf("Ошибка при разборе сообщения: %s", err))
 	}
 
 	filter := bson.M{
@@ -60,7 +59,7 @@ func SaveFundamentalMsg(ctx context.Context, msg amqp.Delivery, cfg *config.Conf
 	updateResult, err := collection.UpdateOne(ctx, filter, update, options.Update().SetUpsert(true))
 
 	if err != nil {
-		log.Fatal(err)
+		slog.Error(err.Error())
 	}
 
 	// Обработка результата
@@ -101,7 +100,7 @@ func GetLatestQuarterReport(ctx context.Context, cfg *config.Config, ticker stri
 		if errors.Is(err, mongo.ErrNoDocuments) {
 			return fundamental, err
 		} else {
-			log.Fatal(err)
+			slog.Error(err.Error())
 		}
 	}
 

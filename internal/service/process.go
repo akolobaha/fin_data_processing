@@ -25,7 +25,7 @@ func TargetsAchievementCheck(target entities.TargetUser, fundamental entities.Fu
 	case TARGET_PS:
 		return checkRatio(targetDec, capitalization, fundamental.Revenue, "revenue")
 	case TARGET_PRICE:
-		return target.Target.Value <= float64(quote.Price), float64(quote.Price), nil
+		return target.Target.Value >= float64(quote.Price), float64(quote.Price), nil
 	default:
 		return false, 0, nil
 	}
