@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
-option go_package = "github.com/akolobaha/fin_quotes.pb";
+option go_package = "grpc/grpc_gen";
 
 service DataManagementService {
   rpc GetMultipleQuotes (MultipleTickerRequest) returns (TickerResponse);

@@ -19,3 +19,7 @@ tasks:
   migrateStatus:
     cmds:
       - source .env && goose -dir=db/migrations postgres "postgres://$POSTGRES_USERNAME:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DATABASE?sslmode=disable" status
+  vet:
+    go vet ./...
+  lint:
+    golangci-lint run
