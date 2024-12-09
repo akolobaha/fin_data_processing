@@ -11,7 +11,8 @@ type Quote struct {
 	Pref           *Quote
 }
 
-func (q *Quote) CalcCapitalization() decimal.Decimal {
+// CalcTotalCapitalization Обычные + префы, если есть
+func (q *Quote) CalcTotalCapitalization() decimal.Decimal {
 	capitalization, err := decimal.NewFromString(q.Capitalization)
 	if err != nil {
 		panic(err)

@@ -14,7 +14,7 @@ const (
 )
 
 func TargetsAchievementCheck(target entities.TargetUser, fundamental entities.Fundamental, quote entities.Quote) (isAchieved bool, currResult float64, err error) {
-	capitalization := quote.CalcCapitalization()
+	capitalization := quote.CalcTotalCapitalization()
 	targetDec := decimal.NewFromFloat(target.Target.Value)
 
 	switch target.Target.ValuationRatio {
@@ -39,5 +39,5 @@ func checkRatio(target decimal.Decimal, capitalization decimal.Decimal, value ui
 	result := capitalization.Div(decimal.NewFromUint64(value))
 	current, _ = result.Float64()
 
-	return !result.GreaterThanOrEqual(target), current, nil
+	return !result.GreaterThan(target), current, nil
 }

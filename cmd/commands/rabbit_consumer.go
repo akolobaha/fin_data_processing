@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fin_data_processing/internal/config"
 	"fin_data_processing/internal/entities"
+	"fin_data_processing/internal/monitoring"
 	"fin_data_processing/internal/service"
 	"fin_data_processing/internal/transport"
 	"fmt"
@@ -62,38 +63,47 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 		case msg := <-msgsFundamental:
 			// Сохранение фундаментала
 			slog.Info(fmt.Sprintf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body))
+			// TODO: записать также в кэш
 			err := service.SaveFundamentalMsg(ctx, msg, cfg)
 			if err != nil {
+				monitoring.ProcessingErrorCount.WithLabelValues(fmt.Sprintf("Failed to save fundamentals: %s", err)).Inc()
 				slog.Error("Failed to save fundamentals: %s", "error", err)
 			}
 			err = msg.Ack(false)
 			if err != nil {
+				monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
 				slog.Error(err.Error())
 				return err
 			}
+			monitoring.ProcessingSuccessCount.WithLabelValues("Фундаментальные данные успешно сохранены").Inc()
 		case msg := <-msgsQuotes:
 			// Получили котировку
 			quote := entities.Quote{}
 			if err := json.Unmarshal(msg.Body, &quote); err != nil {
-				slog.Error(fmt.Sprintf("Ошибка при разборе сообщения: %s", err))
+				monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
+				slog.Error(fmt.Sprintf("Ошибка при разборе сообщения с целью: %s", err))
 			}
 
 			targets := entities.FetchTargets(quote.Ticker, cfg)
 
 			if len(targets) > 0 {
 				for _, target := range targets {
+					// TODO: Получить последний фундаментал из кэша
 					latestFundamental, err := service.GetLatestQuarterReport(ctx, cfg, quote.Ticker, target.Target.FinancialReport)
 					if err != nil {
+						monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
 						slog.Error(err.Error())
 						continue
 					}
 
 					achieved, resultValue, err := service.TargetsAchievementCheck(target, latestFundamental, quote)
 					if err != nil {
+						monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
 						slog.Error(err.Error())
 						continue
 					}
 					if achieved {
+						monitoring.ProcessingSuccessCount.WithLabelValues("Цель достигнута").Inc()
 						target.ResultValue = resultValue
 						entities.SetTargetAchieved(target.Target.ID, achieved)
 						service.SendNotificationMessage(target, rabbit, cfg.RabbitQueueNotifications)

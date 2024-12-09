@@ -3,6 +3,7 @@ package entities
 import (
 	"context"
 	"fin_data_processing/internal/config"
+	"fin_data_processing/internal/monitoring"
 	pb "fin_data_processing/pkg/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -44,6 +45,7 @@ func FetchTargets(ticker string, cfg *config.Config) []TargetUser {
 
 	response, err := client.GetTargets(ctx, req)
 	if err != nil {
+		monitoring.ProcessingErrorCount.WithLabelValues("Could not fetch targets").Inc()
 		slog.Error("could not get targets: %v", "error", err)
 		return []TargetUser{}
 	}

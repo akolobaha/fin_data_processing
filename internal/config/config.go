@@ -29,6 +29,8 @@ type Config struct {
 	MongoDatabase            string `env:"MONGO_DATABASE"`
 	MongoCollection          string `env:"MONGO_COLLECTION"`
 	LogLevel                 string `env:"LOG_LEVEL"`
+	PrometheusPort           string `env:"PROMETHEUS_PORT"`
+	PrometheusHost           string `env:"PROMETHEUS_HOST"`
 }
 
 func Parse(s string) (*Config, error) {
@@ -76,4 +78,10 @@ func (cfg *Config) GetMongoDSN() string {
 func (cfg *Config) GetGrpc() string {
 	return fmt.Sprintf(
 		"%s:%s", cfg.GrpcHost, cfg.GrpcPort)
+}
+
+func (cfg *Config) GetPrometheusURL() string {
+	return fmt.Sprintf(
+		"%s:%s", cfg.PrometheusHost, cfg.PrometheusPort,
+	)
 }
