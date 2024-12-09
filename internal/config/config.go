@@ -8,11 +8,6 @@ import (
 
 type Config struct {
 	ServerAddress            string `env:"SERVER_ADDRESS"`
-	PostgresUsername         string `env:"POSTGRES_USERNAME"`
-	PostgresPassword         string `env:"POSTGRES_PASSWORD"`
-	PostgresHost             string `env:"POSTGRES_HOST"`
-	PostgresPort             string `env:"POSTGRES_PORT"`
-	PostgresDatabase         string `env:"POSTGRES_DATABASE"`
 	GrpcHost                 string `env:"GRPC_HOST"`
 	GrpcPort                 string `env:"GRPC_PORT"`
 	RabbitUsername           string `env:"RABBIT_USERNAME"`
@@ -55,13 +50,6 @@ func setLogLevel(level string) {
 	default:
 		slog.SetLogLoggerLevel(4)
 	}
-}
-
-func (cfg *Config) GetPostgresDSN() string {
-	return fmt.Sprintf(
-		"user=%s password=%s dbname=%s host=%s port=%s sslmode=disable",
-		cfg.PostgresUsername, cfg.PostgresPassword, cfg.PostgresDatabase, cfg.PostgresHost, cfg.PostgresPort,
-	)
 }
 
 func (cfg *Config) GetRabbitDSN() string {

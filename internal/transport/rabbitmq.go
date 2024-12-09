@@ -2,6 +2,7 @@ package transport
 
 import (
 	"fin_data_processing/internal/config"
+	"fin_data_processing/internal/log"
 	"github.com/streadway/amqp"
 	"log/slog"
 )
@@ -34,20 +35,23 @@ func (rabbit *Rabbitmq) ConnClose() {
 	rabbit.Chan.Close()
 }
 
-func (rabbit *Rabbitmq) DeclareQueue(name string) {
+func (rabbit *Rabbitmq) DeclareQueue(name string, durable bool) error {
 	// Объявите очередь, в которую будете отправлять сообщения
 	queue, err := rabbit.Chan.QueueDeclare(
-		name,  // имя очереди
-		true,  // durable постоянная очередь
-		false, // delete when unused
-		false, // exclusive
-		false, // no-wait
-		nil,   // аргументы
+		name,    // имя очереди
+		durable, // durable постоянная очередь
+		false,   // delete when unused
+		false,   // exclusive
+		false,   // no-wait
+		nil,     // аргументы
 	)
 	rabbit.Queue = queue
 	if err != nil {
-		slog.Error("Failed to declare a queue: ", "", err)
+		log.Error("Failed to declare a queue: ", err)
+		return err
 	}
+
+	return nil
 }
 
 func (rabbit *Rabbitmq) SendMsg(data []byte) {

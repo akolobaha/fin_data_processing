@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fin_data_processing/internal/config"
 	"fin_data_processing/internal/entities"
+	"fin_data_processing/internal/log"
 	"fin_data_processing/internal/monitoring"
 	"fin_data_processing/internal/service"
 	"fin_data_processing/internal/transport"
@@ -29,6 +30,8 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 		slog.Error("Failed to open a channel: %s", "error", err)
 	}
 	defer ch.Close()
+
+	cache := entities.NewFundamentalCache()
 
 	msgsFundamental, err := ch.Consume(
 		cfg.RabbitQueueFundamentals,
@@ -63,7 +66,7 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 		case msg := <-msgsFundamental:
 			// Сохранение фундаментала
 			slog.Info(fmt.Sprintf("Received fundamentals from %s: %s", cfg.RabbitQueueFundamentals, msg.Body))
-			// TODO: записать также в кэш
+
 			err := service.SaveFundamentalMsg(ctx, msg, cfg)
 			if err != nil {
 				monitoring.ProcessingErrorCount.WithLabelValues(fmt.Sprintf("Failed to save fundamentals: %s", err)).Inc()
@@ -71,10 +74,20 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 			}
 			err = msg.Ack(false)
 			if err != nil {
-				monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
-				slog.Error(err.Error())
+				log.Error("", err)
 				return err
 			}
+
+			ticker := msg.Headers["Ticker"].(string)
+			reportMethod := msg.Headers["ReportMethod"].(string)
+			latestFundamental, err := service.GetLatestQuarterReport(ctx, cfg, ticker, reportMethod)
+			if err != nil {
+				log.Error("", err)
+			}
+
+			cache.Set(ticker, reportMethod, latestFundamental)
+			log.Info(fmt.Sprintf("Записали отчетность в кэш %s %s", ticker, reportMethod))
+
 			monitoring.ProcessingSuccessCount.WithLabelValues("Фундаментальные данные успешно сохранены").Inc()
 		case msg := <-msgsQuotes:
 			// Получили котировку
@@ -88,8 +101,16 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 
 			if len(targets) > 0 {
 				for _, target := range targets {
-					// TODO: Получить последний фундаментал из кэша
-					latestFundamental, err := service.GetLatestQuarterReport(ctx, cfg, quote.Ticker, target.Target.FinancialReport)
+
+					// Берем из кэша, если есть, иначе с БД
+					latestFundamental, ok := cache.Get(quote.Ticker, target.Target.FinancialReport)
+					if !ok {
+						latestFundamental, err = service.GetLatestQuarterReport(ctx, cfg, quote.Ticker, target.Target.FinancialReport)
+						cache.Set(quote.Ticker, target.Target.FinancialReport, latestFundamental)
+					} else {
+						log.Info(fmt.Sprintf("Данные взяты из кэша: %s %s", quote.Ticker, target.Target.FinancialReport))
+					}
+
 					if err != nil {
 						monitoring.ProcessingErrorCount.WithLabelValues(err.Error()).Inc()
 						slog.Error(err.Error())
