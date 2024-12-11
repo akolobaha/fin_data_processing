@@ -127,7 +127,13 @@ func ReadFromQueue(ctx context.Context, cfg *config.Config) error {
 						monitoring.ProcessingSuccessCount.WithLabelValues("Цель достигнута").Inc()
 						target.ResultValue = resultValue
 						entities.SetTargetAchieved(target.Target.ID, achieved)
-						service.SendNotificationMessage(target, rabbit, cfg.RabbitQueueNotifications)
+						if target.User.Email != "" {
+							service.SendEmailNotificationMessage(target, rabbit, cfg.RabbitQueueNotifications)
+						}
+						if target.User.Telegram != "" {
+							// TODO: Отправить сообщения в сервис рассылки телеграмма
+						}
+
 					}
 				}
 			}

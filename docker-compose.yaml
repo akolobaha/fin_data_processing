@@ -31,16 +31,6 @@ services:
     container_name: data-processing-app
     ports:
       - "50052:50052"
-    depends_on:
-      - db
-    links:
-      - db
-    environment:
-      POSTGRES_HOST: ${POSTGRES_HOST}ва
-      POSTGRES_PORT: ${POSTGRES_PORT}
-      POSTGRES_USER: ${POSTGRES_USERNAME}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DATABASE}
     networks:
       - fin-network
 

@@ -7,7 +7,7 @@ import (
 	"fin_data_processing/internal/transport"
 )
 
-func SendNotificationMessage(target entities.TargetUser, rabbit *transport.Rabbitmq, queueName string) {
+func SendEmailNotificationMessage(target entities.TargetUser, rabbit *transport.Rabbitmq, queueName string) {
 	data, err := json.Marshal(target)
 	if err != nil {
 		return
